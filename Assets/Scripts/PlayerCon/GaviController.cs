@@ -175,6 +175,12 @@ public class GaviController : MonoBehaviour
             PlayerPrefs.SetInt("StageClear", nowstage + 1);
             SceneManager.LoadScene("stage" + nowstage);
         }
+        if (coll.gameObject.tag == "LastGoal")
+        {
+            //クリアステージの更新、選択画面へ
+            PlayerPrefs.SetInt("WoldClear", nowstage + 1);
+            SceneManager.LoadScene("stage" + nowstage);
+        }
         //地面との設置を送る
         if (coll.gameObject.tag == "ground")
         {
