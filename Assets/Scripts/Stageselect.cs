@@ -26,7 +26,7 @@ public class Stageselect : MonoBehaviour
         //最後に遊んだステージ
         PlayerPrefs.SetInt("StagePlay", nowWold);
         //Worp[1]までは選択可能
-        clearstage = PlayerPrefs.GetInt("StageClear", 6);
+        clearstage = PlayerPrefs.GetInt("StageClear", 1);
         //最初はWorp[0]の位置にガービィを置く
 
         //ステージ数取得

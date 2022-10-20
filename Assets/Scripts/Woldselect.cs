@@ -17,7 +17,6 @@ public class Woldselect : MonoBehaviour
 
     void Start()
     {
-        PlayerPrefs.DeleteKey("WoldClear");
 
         lastplay = PlayerPrefs.GetInt("StagePlay", 0);
         if (Input.GetKeyDown(KeyCode.Return))
@@ -31,7 +30,7 @@ public class Woldselect : MonoBehaviour
     void Update()
     {
         //stageの最後をクリアするとWoldClearが更新される
-        clearwold = PlayerPrefs.GetInt("WoldClear", 6);
+        clearwold = PlayerPrefs.GetInt("WoldClear", 1);
         //最初はWorp[0]の位置にガービィを置く
 
         //ステージ数取得
