@@ -29,6 +29,8 @@ public class GaviController : MonoBehaviour
 
     private GameObject Player;
     private GameObject Worp;
+    private GameObject Goal;
+    private GameObject crear;
     [Header("ヘルプのオブジェクト")]
     public GameObject Help;
     [Header("敵の位置")]
