@@ -24,7 +24,8 @@ public class GaviController : MonoBehaviour
     private int JampMax;
     [Header("プレイヤーの特性(バウンドとか)")]
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Animator animator;
+    [SerializeField] private Animator Gavianimator;
+    [SerializeField] private Animator Worpanimator;
 
     private GameObject Player;
     private GameObject Worp;
@@ -81,7 +82,7 @@ public class GaviController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             Engine = true;
-            animator.SetBool("Engine", true);
+            Gavianimator.SetBool("Engine", true);
         }
         //エンジンを付けたら
         if (Engine == true)
@@ -215,6 +216,12 @@ public class GaviController : MonoBehaviour
 
     public void StageBack()
     {
+        StartCoroutine(WorpAnim());
+    }
+    IEnumerator WorpAnim()
+    {
+        Worpanimator.SetBool("StageBack", true);
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene("stage" + nowstage);
     }
     public void Jumpheel()

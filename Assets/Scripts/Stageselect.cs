@@ -16,6 +16,7 @@ public class Stageselect : MonoBehaviour
     [Header("現在のワールドの数字を入力")]
     public int nowWold = 0;        //現在のワールド
 
+    [SerializeField] private Animator Worpanimator;
 
     void Start()
     {
@@ -55,8 +56,14 @@ public class Stageselect : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                SceneManager.LoadScene("stage" + nowWold + "-" + nowStage);
+                StartCoroutine(WorpAnim());
             }
+        }
+        IEnumerator WorpAnim()
+        {
+            Worpanimator.SetBool("StageBack", true);
+            yield return new WaitForSeconds(2);
+            SceneManager.LoadScene("stage" + nowWold + "-" + nowStage);
         }
         if (nowStage == 0)
         {
@@ -65,6 +72,7 @@ public class Stageselect : MonoBehaviour
                 SceneManager.LoadScene("stage0Wold");
             }
         }
+ 
 
         Debug.Log(nowStage);
         Debug.Log("現在のクリアしたステージは" + clearstage + "まで");

@@ -60,6 +60,7 @@ public class Woldselect : MonoBehaviour
             SceneManager.LoadScene("stage" + now);
         }
 
+
         Debug.Log(now);
         Debug.Log("現在のクリアしたステージは" + clearwold + "まで");
     }
