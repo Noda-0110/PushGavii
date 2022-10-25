@@ -22,6 +22,8 @@ public class GaviController : MonoBehaviour
     public int JampEne = 3;
     //ジャンプの最大回数を入れる器
     private int JampMax;
+    //ワールドクリアに使う
+    private int CrearWorld;
     [Header("プレイヤーの特性(バウンドとか)")]
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Animator Gavianimator;
@@ -73,6 +75,13 @@ public class GaviController : MonoBehaviour
     }
     void Update()
     {
+        //クリア状況のリセット
+        /*
+        PlayerPrefs.DeleteKey("StagePlay");
+        PlayerPrefs.DeleteKey("WoldClear");
+        PlayerPrefs.DeleteKey("StagePlay");
+        */
+        CrearWorld = PlayerPrefs.GetInt("StagePlay", 0);
         if (restart == true)
         {
             restart = false;
@@ -176,13 +185,13 @@ public class GaviController : MonoBehaviour
         {
             //クリアステージの更新、選択画面へ
             PlayerPrefs.SetInt("StageClear", nowstage + 1);
-            SceneManager.LoadScene("stage" + nowstage);
+            SceneManager.LoadScene("stage" + CrearWorld);
         }
         if (coll.gameObject.tag == "LastGoal")
         {
             //クリアステージの更新、選択画面へ
-            PlayerPrefs.SetInt("WoldClear", nowstage + 1);
-            SceneManager.LoadScene("stage" + nowstage);
+            PlayerPrefs.SetInt("WoldClear", CrearWorld + 1);
+            SceneManager.LoadScene("stage" + CrearWorld);
         }
         //地面との設置を送る
         if (coll.gameObject.tag == "ground")
@@ -224,7 +233,7 @@ public class GaviController : MonoBehaviour
     {
         Worpanimator.SetBool("StageBack", true);
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene("stage" + nowstage);
+        SceneManager.LoadScene("stage" + CrearWorld);
     }
     public void Jumpheel()
     {
