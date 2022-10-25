@@ -115,9 +115,6 @@ public class GaviController : MonoBehaviour
                 Jump();//ジャンプする
             }
         }
-
-
-
         //残機を表示
         LifeCount[heart].SetActive(true);
 
@@ -174,31 +171,44 @@ public class GaviController : MonoBehaviour
             Player.transform.position = Worp.transform.position;
             Enemy.transform.position = EnemyWorp.transform.position;
         }
+        if (coll.gameObject.tag == "Goal")
+        {
+            speed = 0;
+            //クリアステージの更新、選択画面へ
+            PlayerPrefs.SetInt("StageClear", nowstage + 1);
+            Gavianimator.SetBool("Bye", true);
+            StartCoroutine(StageCrear());
+        }
 
+        if (coll.gameObject.tag == "LastGoal")
+        {
+            speed = 0;
+            //クリアステージの更新、選択画面へ
+            PlayerPrefs.SetInt("WoldClear", CrearWorld + 1);
+            Gavianimator.SetBool("Bye", true);
+            StartCoroutine(StageCrear());
+        }
+
+        //ポップアップを表示、未完成
         if (coll.gameObject.tag == "Help")
         {
             Help.SetActive(true);
-            Engine = false;
         }
 
-        if (coll.gameObject.tag == "Goal")
-        {
-            //クリアステージの更新、選択画面へ
-            PlayerPrefs.SetInt("StageClear", nowstage + 1);
-            SceneManager.LoadScene("stage" + CrearWorld);
-        }
-        if (coll.gameObject.tag == "LastGoal")
-        {
-            //クリアステージの更新、選択画面へ
-            PlayerPrefs.SetInt("WoldClear", CrearWorld + 1);
-            SceneManager.LoadScene("stage" + CrearWorld);
-        }
         //地面との設置を送る
         if (coll.gameObject.tag == "ground")
         {
             isGroundEnter = true;
         }
     }
+    IEnumerator StageCrear()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("stage" + CrearWorld);
+    }
+
+
+    //IEnumerator 
     public void Reset()
     {
         for (int i = 0; i <= Lifelength; i++)
@@ -210,6 +220,7 @@ public class GaviController : MonoBehaviour
     //何かの中にいる
     private void OnTriggerStay2D(Collider2D coll)
     {
+
         if (coll.gameObject.tag == "ground")
         {
             isGroundStay = true;
