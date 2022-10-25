@@ -7,53 +7,75 @@ public class Stageselect : MonoBehaviour
 {
     public static Stageselect instance;
 
+    [Header("現在のクリアしたステージ")]
+    public int clearstage;  //クリアしたステージ
     public GameObject Player;   //プレイヤーの位置
     public GameObject[] Worp;   //ワープ先の位置
-    private int now = 0;        //現在のステージ
+    private int nowStage = 0;        //現在のステージ
     private int Stagelength;         //ステージの大きさの器
+    [Header("現在のワールドの数字を入力")]
+    public int nowWold = 0;        //現在のワールド
 
-    public int clearstage;  //クリアしたステージ
+    [SerializeField] private Animator Worpanimator;
 
     void Start()
     {
-
     }
 
     void Update()
     {
+        //最後に遊んだステージ
+        PlayerPrefs.SetInt("StagePlay", nowWold);
         //Worp[1]までは選択可能
-        clearstage = PlayerPrefs.GetInt("Clear",1);
+        clearstage = PlayerPrefs.GetInt("StageClear", 1);
         //最初はWorp[0]の位置にガービィを置く
 
         //ステージ数取得
-        Stagelength = Worp.Length-1;
+        Stagelength = Worp.Length - 1;
 
-        if (Input.GetKeyDown(KeyCode.D)||Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             //ステージの数より先には進まない
-            if (Stagelength > now && now < clearstage)
+            if (Stagelength > nowStage && nowStage < clearstage)
             {
-                now++;
-                Player.transform.position = Worp[now].transform.position;
+                nowStage++;
+                Player.transform.position = Worp[nowStage].transform.position;
             }
         }
-        if (Input.GetKeyDown(KeyCode.A)||Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             //０よりも前に戻らない
-            if (0 < now)
+            if (0 < nowStage)
             {
-                now--;
-                Player.transform.position = Worp[now].transform.position;
+                nowStage--;
+                Player.transform.position = Worp[nowStage].transform.position;
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.Return))
+        if (nowStage > 0)
         {
-            SceneManager.LoadScene("stage" + now);
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                StartCoroutine(WorpAnim());
+            }
         }
+        IEnumerator WorpAnim()
+        {
+            Worpanimator.SetBool("StageBack", true);
+            yield return new WaitForSeconds(2);
+            SceneManager.LoadScene("stage" + nowWold + "-" + nowStage);
+        }
+        if (nowStage == 0)
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                SceneManager.LoadScene("stage0Wold");
+            }
+        }
+ 
 
-        Debug.Log(now);
-        Debug.Log("現在のクリアしたステージは"+clearstage+"まで");
+        Debug.Log(nowStage);
+        Debug.Log("現在のクリアしたステージは" + clearstage + "まで");
     }
 
 }

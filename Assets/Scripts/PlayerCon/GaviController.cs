@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Animator))]
 
 public class GaviController : MonoBehaviour
-{  
+{
     [Header("現在のステージ(クリア状況更新用)")]
     public int nowstage;
     [Header("体力")]
@@ -24,10 +24,13 @@ public class GaviController : MonoBehaviour
     private int JampMax;
     [Header("プレイヤーの特性(バウンドとか)")]
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private Animator animator;
+    [SerializeField] private Animator Gavianimator;
+    [SerializeField] private Animator Worpanimator;
 
     private GameObject Player;
     private GameObject Worp;
+    private GameObject Goal;
+    private GameObject crear;
     [Header("ヘルプのオブジェクト")]
     public GameObject Help;
     [Header("敵の位置")]
@@ -60,7 +63,7 @@ public class GaviController : MonoBehaviour
         //戻るボタンを表示
         backbutton.SetActive(true);
         //エンジンを停止
-         Engine = false;
+        Engine = false;
         //設置状況をfalseに
         isGroundAll = false;
         //プレイヤーを取得
@@ -81,7 +84,7 @@ public class GaviController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             Engine = true;
-            animator.SetBool("Engine", true);
+            Gavianimator.SetBool("Engine", true);
         }
         //エンジンを付けたら
         if (Engine == true)
@@ -172,8 +175,14 @@ public class GaviController : MonoBehaviour
         if (coll.gameObject.tag == "Goal")
         {
             //クリアステージの更新、選択画面へ
-            PlayerPrefs.SetInt("Clear", nowstage + 1);
-            SceneManager.LoadScene("stage0Wold");
+            PlayerPrefs.SetInt("StageClear", nowstage + 1);
+            SceneManager.LoadScene("stage" + nowstage);
+        }
+        if (coll.gameObject.tag == "LastGoal")
+        {
+            //クリアステージの更新、選択画面へ
+            PlayerPrefs.SetInt("WoldClear", nowstage + 1);
+            SceneManager.LoadScene("stage" + nowstage);
         }
         //地面との設置を送る
         if (coll.gameObject.tag == "ground")
@@ -209,7 +218,13 @@ public class GaviController : MonoBehaviour
 
     public void StageBack()
     {
-        SceneManager.LoadScene("stage0Wold");
+        StartCoroutine(WorpAnim());
+    }
+    IEnumerator WorpAnim()
+    {
+        Worpanimator.SetBool("StageBack", true);
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("stage" + nowstage);
     }
     public void Jumpheel()
     {
