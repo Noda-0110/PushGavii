@@ -493,7 +493,7 @@ MonoBehaviour:
   - {fileID: 1696446111}
   - {fileID: 1950541492}
   - {fileID: 1403228851}
-  nowWold: 1
+  nowWold: 2
   Worpanimator: {fileID: 1524059995}
 --- !u!1 &1230530847
 GameObject:
