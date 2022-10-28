@@ -2081,8 +2081,6 @@ MonoBehaviour:
   Gavianimator: {fileID: 1096896883}
   Worpanimator: {fileID: 206842217}
   Help: {fileID: 0}
-  Enemy: {fileID: 483969064}
-  EnemyWorp: {fileID: 556094027}
   Engine: 0
   backbutton: {fileID: 1450386020}
   JampCount:
@@ -2122,6 +2120,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1096896885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096896873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6da57b4efbce44b4baf08160b693363f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy:
+  - {fileID: 483969064}
+  EnemyWorp:
+  - {fileID: 556094027}
 --- !u!1 &1131585064
 GameObject:
   m_ObjectHideFlags: 0
