@@ -24,6 +24,7 @@ public class Woldselect : MonoBehaviour
             SceneManager.LoadScene("stage" + lastplay);
         }
         Player.transform.position = Worp[lastplay].transform.position;
+
         now = lastplay;
     }
 

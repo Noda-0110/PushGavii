@@ -34,8 +34,7 @@ public class GaviController : MonoBehaviour
     private GameObject Goal;
 
     private GameObject crear;
-    [Header("ヘルプのオブジェクト")]
-    public GameObject Help;
+
 
     //接地判定と移動可能か
     [Header("")]
@@ -183,12 +182,6 @@ public class GaviController : MonoBehaviour
             PlayerPrefs.SetInt("WoldClear", CrearWorld + 1);
             Gavianimator.SetBool("Bye", true);
             StartCoroutine(StageCrear());
-        }
-
-        //ポップアップを表示、未完成
-        if (coll.gameObject.tag == "Help")
-        {
-            Help.SetActive(true);
         }
 
         //地面との設置を送る

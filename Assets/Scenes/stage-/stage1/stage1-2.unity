@@ -2368,15 +2368,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nowstage: 2
   heart: 5
-  speed: 3
+  speed: 4
   jump: 4
   JampEne: 3
   rb: {fileID: 1096896874}
   Gavianimator: {fileID: 1096896883}
   Worpanimator: {fileID: 206842217}
   Help: {fileID: 0}
-  Enemy: {fileID: 0}
-  EnemyWorp: {fileID: 0}
   Engine: 0
   backbutton: {fileID: 1450386020}
   JampCount:
