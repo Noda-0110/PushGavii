@@ -32,13 +32,9 @@ public class GaviController : MonoBehaviour
     private GameObject Player;
     private GameObject Worp;
     private GameObject Goal;
+
     private GameObject crear;
-    [Header("ヘルプのオブジェクト")]
-    public GameObject Help;
-    [Header("敵の位置")]
-    public GameObject Enemy;
-    [Header("敵の出現先の位置")]
-    public GameObject EnemyWorp;
+
 
     //接地判定と移動可能か
     [Header("")]
@@ -169,7 +165,6 @@ public class GaviController : MonoBehaviour
             restart = true;
             //プライヤーをワープ先に移動
             Player.transform.position = Worp.transform.position;
-            Enemy.transform.position = EnemyWorp.transform.position;
         }
         if (coll.gameObject.tag == "Goal")
         {
@@ -187,12 +182,6 @@ public class GaviController : MonoBehaviour
             PlayerPrefs.SetInt("WoldClear", CrearWorld + 1);
             Gavianimator.SetBool("Bye", true);
             StartCoroutine(StageCrear());
-        }
-
-        //ポップアップを表示、未完成
-        if (coll.gameObject.tag == "Help")
-        {
-            Help.SetActive(true);
         }
 
         //地面との設置を送る

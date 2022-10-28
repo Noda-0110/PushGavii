@@ -9,8 +9,9 @@ TagManager:
   - Goal
   - ground
   - MoveGround
-  - Help
   - LastGoal
+  - Help1
+  - Help2
   layers:
   - Default
   - TransparentFX
