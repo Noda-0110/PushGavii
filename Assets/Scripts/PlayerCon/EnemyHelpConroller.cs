@@ -9,7 +9,7 @@ public class EnemyHelpConroller : MonoBehaviour
     [Header("敵の出現先の位置")]
     public GameObject[] EnemyWorp;[Header("ヘルプのオブジェクト")]
     public GameObject Help1;
-    public GameObject Help2;
+    //public GameObject Help2;
 
     private int EnemyLen = 0;
     private bool helpmode = false;
@@ -28,7 +28,7 @@ public class EnemyHelpConroller : MonoBehaviour
             {
                 Time.timeScale = 1;
                 Help1.SetActive(false);
-                Help2.SetActive(false);
+                //Help2.SetActive(false);
                 helpmode = false;
             }
         }
@@ -50,6 +50,7 @@ public class EnemyHelpConroller : MonoBehaviour
             Help1.SetActive(true);
             helpmode = true;
         }
+        /*
         //ポップアップを表示、未完成
         if (coll.gameObject.tag == "Help2")
         {
@@ -57,6 +58,7 @@ public class EnemyHelpConroller : MonoBehaviour
             Help2.SetActive(true);
             helpmode = true;
         }
+        */
 
     }
 }
