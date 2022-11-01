@@ -18,7 +18,7 @@ public class Woldselect : MonoBehaviour
     void Start()
     {
 
-        lastplay = PlayerPrefs.GetInt("StagePlay", 0);
+        lastplay = PlayerPrefs.GetInt("StagePlay", 1);
         if (Input.GetKeyDown(KeyCode.Return))
         {
             SceneManager.LoadScene("stage" + lastplay);

@@ -20,21 +20,29 @@ public class GaviController : MonoBehaviour
     public float jump = 0;
     [Header("ジャンプ回数")]
     public int JampEne = 3;
+    [Header("ヘルプのオブジェクト1")]
+    public GameObject HelpPack1;
+    [Header("ヘルプを出すブロック1")]
+    public GameObject Help1;
+    [Header("ヘルプのオブジェクト2")]
+    public GameObject HelpPack2;
+    [Header("ヘルプを出すブロック2")]
+    public GameObject Help2;
     //ジャンプの最大回数を入れる器
     private int JampMax;
     //ワールドクリアに使う
     private int CrearWorld;
+
+    private bool helpmode1 = false;
+    private bool helpmode2 = false;
+
+    private GameObject Player;
+    private GameObject Worp;
+
     [Header("プレイヤーの特性(バウンドとか)")]
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Animator Gavianimator;
     [SerializeField] private Animator Worpanimator;
-
-    private GameObject Player;
-    private GameObject Worp;
-    private GameObject Goal;
-
-    private GameObject crear;
-
 
     //接地判定と移動可能か
     [Header("")]
@@ -71,13 +79,33 @@ public class GaviController : MonoBehaviour
     }
     void Update()
     {
+        if (helpmode1 == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                HelpPack1.SetActive(false);
+                Help1.SetActive(false);
+                Time.timeScale = 1;
+                helpmode1 = false;
+            }
+        }
+        if (helpmode2 == true)
+        {
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                HelpPack2.SetActive(false);
+                Help2.SetActive(false);
+                Time.timeScale = 1;
+                helpmode2 = false;
+            }
+        }
         //クリア状況のリセット
         /*
         PlayerPrefs.DeleteKey("StagePlay");
         PlayerPrefs.DeleteKey("WoldClear");
         PlayerPrefs.DeleteKey("StagePlay");
         */
-        CrearWorld = PlayerPrefs.GetInt("StagePlay", 0);
+        CrearWorld = PlayerPrefs.GetInt("StagePlay", 1);
         if (restart == true)
         {
             restart = false;
@@ -119,7 +147,11 @@ public class GaviController : MonoBehaviour
         {
             SceneManager.LoadScene("OverScene");
         }
+    }
 
+    private void FixedUpdate()
+    {
+        
     }
 
     //ジャンプする
@@ -188,6 +220,22 @@ public class GaviController : MonoBehaviour
         if (coll.gameObject.tag == "ground")
         {
             isGroundEnter = true;
+        }
+        //ポップアップを表示１
+        if (coll.gameObject.tag == "Help1")
+        {
+            Engine = false;
+            HelpPack1.SetActive(true);
+            Time.timeScale = 0;
+            helpmode1 = true;
+        }        
+        //ポップアップを表示２
+        if (coll.gameObject.tag == "Help2")
+        {
+            Engine = false;
+            HelpPack2.SetActive(true);
+            Time.timeScale = 0;
+            helpmode2 = true;
         }
     }
     IEnumerator StageCrear()
