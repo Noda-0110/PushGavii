@@ -103,7 +103,7 @@ public class GaviController : MonoBehaviour
         /*
         PlayerPrefs.DeleteKey("StagePlay");
         PlayerPrefs.DeleteKey("WoldClear");
-        PlayerPrefs.DeleteKey("StagePlay");
+        PlayerPrefs.DeleteKey("StageClear");
         */
         CrearWorld = PlayerPrefs.GetInt("StagePlay", 1);
         if (restart == true)
