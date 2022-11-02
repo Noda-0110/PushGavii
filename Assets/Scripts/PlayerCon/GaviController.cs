@@ -79,6 +79,7 @@ public class GaviController : MonoBehaviour
     }
     void Update()
     {
+        Debug.Log(heart);
         if (helpmode1 == true)
         {
             if (Input.GetKeyDown(KeyCode.Return))
@@ -105,6 +106,7 @@ public class GaviController : MonoBehaviour
         PlayerPrefs.DeleteKey("WoldClear");
         PlayerPrefs.DeleteKey("StageClear");
         */
+        PlayerPrefs.SetInt("WoldClear", 6);
         CrearWorld = PlayerPrefs.GetInt("StagePlay", 1);
         if (restart == true)
         {
@@ -143,7 +145,7 @@ public class GaviController : MonoBehaviour
         LifeCount[heart].SetActive(true);
 
         //ライフが０になったらゲームオーバーへ
-        if (heart == 0)
+        if (heart < 0)
         {
             SceneManager.LoadScene("OverScene");
         }

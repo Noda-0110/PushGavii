@@ -5,7 +5,8 @@ using UnityEngine;
 public class memo : MonoBehaviour
 {
     //MoveGabiはnowstageに現在のステージ数を入力しておくとクリア状況が更新される、次のステージではなく現在のステージ数を入力
-    //LifeCount,JumpCountには、Life[10],Jump[4]でUI-Imageの数字を入れる、０～
+    //
+    //,JumpCountには、Life[10],Jump[4]でUI-Imageの数字を入れる、０～
     //PlayerにはChara、Worpには生き返りたい位置に物を置き入れる
     //ガービィが乗ることのできる全ての物にGround、触れたら死ぬものはEnemyタグをつける
     //ステージ選択画面へ戻る処理はガービィが持っているものをボタンに付ける

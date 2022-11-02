@@ -17,13 +17,7 @@ public class TitleHouse0 : MonoBehaviour
         //エンターキーでHouseへ
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            SceneManager.LoadScene("House");
+            SceneManager.LoadScene("stage0Wold");
         }
-    }
-
-    //チュートリアルをスキップ
-    public void Stage0Skip()
-    {
-        SceneManager.LoadScene("stage0Wold");
     }
 }
