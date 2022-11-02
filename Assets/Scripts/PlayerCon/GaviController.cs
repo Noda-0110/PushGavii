@@ -185,9 +185,7 @@ public class GaviController : MonoBehaviour
         return isGroundCheck;
     }
 
-
-    //何かに入った
-    private void OnTriggerEnter2D(Collider2D coll)
+    private void OnCollisionEnter2D(Collision2D coll)
     {
         Lifelength = LifeCount.Length - 1;
         if (coll.gameObject.tag == "Enemy")
@@ -200,6 +198,12 @@ public class GaviController : MonoBehaviour
             //プライヤーをワープ先に移動
             Player.transform.position = Worp.transform.position;
         }
+    }
+
+    //何かに入った
+    private void OnTriggerEnter2D(Collider2D coll)
+    {
+
         if (coll.gameObject.tag == "Goal")
         {
             speed = 0;
