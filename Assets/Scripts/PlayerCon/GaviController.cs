@@ -145,7 +145,7 @@ public class GaviController : MonoBehaviour
         LifeCount[heart].SetActive(true);
 
         //ライフが０になったらゲームオーバーへ
-        if (heart < 0)
+        if (heart == 0)
         {
             SceneManager.LoadScene("OverScene");
         }
