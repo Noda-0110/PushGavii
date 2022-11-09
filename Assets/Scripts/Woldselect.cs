@@ -63,7 +63,15 @@ public class Woldselect : MonoBehaviour
 
 
         Debug.Log(now);
-        Debug.Log("現在のクリアしたステージは" + clearwold + "まで");
+        Debug.Log("現在のクリアしたワールドは" + clearwold + "まで");
+    }
+
+    public void DataReset()
+    {
+        //クリア状況のリセット
+        PlayerPrefs.DeleteKey("StagePlay");
+        PlayerPrefs.DeleteKey("WoldClear");
+        PlayerPrefs.DeleteKey("StageClear");
     }
 
 }

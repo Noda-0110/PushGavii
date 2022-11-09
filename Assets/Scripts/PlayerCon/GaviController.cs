@@ -100,13 +100,10 @@ public class GaviController : MonoBehaviour
                 helpmode2 = false;
             }
         }
-        //クリア状況のリセット
-        /*
-        PlayerPrefs.DeleteKey("StagePlay");
-        PlayerPrefs.DeleteKey("WoldClear");
-        PlayerPrefs.DeleteKey("StageClear");
-        */
-        PlayerPrefs.SetInt("WoldClear", 6);
+        
+
+        
+        //PlayerPrefs.SetInt("WoldClear", 1);
         CrearWorld = PlayerPrefs.GetInt("StagePlay", 1);
         if (restart == true)
         {
@@ -283,6 +280,8 @@ public class GaviController : MonoBehaviour
     {
         StartCoroutine(WorpAnim());
     }
+
+
     IEnumerator WorpAnim()
     {
         Worpanimator.SetBool("StageBack", true);
