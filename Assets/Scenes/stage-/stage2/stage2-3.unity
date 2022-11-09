@@ -1943,7 +1943,7 @@ GameObject:
   - component: {fileID: 501457745}
   m_Layer: 0
   m_Name: Goal
-  m_TagString: Goal
+  m_TagString: LastGoal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
