@@ -12,6 +12,8 @@ TagManager:
   - LastGoal
   - Help1
   - Help2
+  - Worp1
+  - Worp2
   layers:
   - Default
   - TransparentFX

@@ -39,6 +39,9 @@ public class GaviController : MonoBehaviour
     private GameObject Player;
     private GameObject Worp;
 
+    public GameObject Worp1;
+    public GameObject Worp2;
+
     [Header("プレイヤーの特性(バウンドとか)")]
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Animator Gavianimator;
@@ -100,9 +103,9 @@ public class GaviController : MonoBehaviour
                 helpmode2 = false;
             }
         }
-        
 
-        
+
+
         //PlayerPrefs.SetInt("WoldClear", 1);
         CrearWorld = PlayerPrefs.GetInt("StagePlay", 1);
         if (restart == true)
@@ -150,7 +153,7 @@ public class GaviController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+
     }
 
     //ジャンプする
@@ -200,7 +203,16 @@ public class GaviController : MonoBehaviour
     //何かに入った
     private void OnTriggerEnter2D(Collider2D coll)
     {
-
+        if (coll.gameObject.tag == "Worp1")
+        {
+            //プライヤーをワープ先に移動
+            Player.transform.position = Worp1.transform.position;
+        }
+        if (coll.gameObject.tag == "Worp2")
+        {
+            //プライヤーをワープ先に移動
+            Player.transform.position = Worp2.transform.position;
+        }
         if (coll.gameObject.tag == "Goal")
         {
             speed = 0;
@@ -231,7 +243,7 @@ public class GaviController : MonoBehaviour
             HelpPack1.SetActive(true);
             Time.timeScale = 0;
             helpmode1 = true;
-        }        
+        }
         //ポップアップを表示２
         if (coll.gameObject.tag == "Help2")
         {
