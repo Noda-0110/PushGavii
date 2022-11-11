@@ -14,8 +14,8 @@ public class GaviController : MonoBehaviour
     public int nowstage;
     [Header("体力")]
     public int heart;
-    [Header("動くスピード")]
-    public float speed = 0;
+    //[Header("動くスピード")]
+    private float speed = 4f;
     [Header("ジャンプの高さ")]
     public float jump = 0;
     [Header("ジャンプ回数")]
@@ -131,6 +131,7 @@ public class GaviController : MonoBehaviour
             isGroundAll = GroundCheck();
             //常に右へ進み続ける、影響受けない、段差止まる
             rb.velocity = new Vector2(speed, rb.velocity.y);
+            //transform.Translate(transform.right * Time.deltaTime * 3 * speed);
             //接地していればジャンプ可能
             if (Input.GetKeyDown(KeyCode.C) && isGroundAll == true && JampEne > 0)
             {
