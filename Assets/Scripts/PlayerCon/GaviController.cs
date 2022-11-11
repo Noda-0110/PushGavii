@@ -39,7 +39,9 @@ public class GaviController : MonoBehaviour
     private GameObject Player;
     private GameObject Worp;
 
+    [Header("ワープ先１ Tag:Worp1")]
     public GameObject Worp1;
+    [Header("ワープ先２ Tag:Worp2")]
     public GameObject Worp2;
 
     [Header("プレイヤーの特性(バウンドとか)")]
