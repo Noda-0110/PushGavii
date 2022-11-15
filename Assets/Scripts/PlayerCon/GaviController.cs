@@ -16,6 +16,7 @@ public class GaviController : MonoBehaviour
     public int heart;
     //[Header("動くスピード")]
     private float speed = 4f;
+    private float rspeed = -4f;
     [Header("ジャンプの高さ")]
     public float jump = 0;
     [Header("ジャンプ回数")]
@@ -39,27 +40,14 @@ public class GaviController : MonoBehaviour
     private GameObject Player;
     private GameObject Worp;
 
+    //反転
+    private bool rflg = true;
+    public float cameraX = 5;
+
     [Header("ワープ先１ Tag:Worp1")]
     public GameObject Worp1;
     [Header("ワープ先２ Tag:Worp2")]
     public GameObject Worp2;
-
-    [Header("ワープ先１出口へ")]
-    public float ventOut1_X;
-    public float ventOut1_Y;
-    [Header("ワープ先1入口へ")]
-    public float ventIn1_X;
-    public float ventIn1_Y;
-    [Header("ワープ先２出口へ")]
-    public float ventOut2_X;
-    public float ventOut2_Y;
-    [Header("ワープ先２入口へ")]
-    public float ventIn2_X;
-    public float ventIn2_Y;
-    [Header("ワープ１フラグ")]
-    private bool flg1 = false;
-    [Header("ワープ２フラグ")]
-    private bool flg2 = false;
 
     [Header("プレイヤーの特性(バウンドとか)")]
     [SerializeField] private Rigidbody2D rb;
@@ -101,9 +89,6 @@ public class GaviController : MonoBehaviour
     }
     void Update()
     {
-        //ワープの為の座標
-        Vector3 pos = gameObject.transform.position;
-
         Debug.Log(heart);
         if (helpmode1 == true)
         {
@@ -124,25 +109,6 @@ public class GaviController : MonoBehaviour
                 Time.timeScale = 1;
                 helpmode2 = false;
             }
-        }
-
-        if(flg1 == true)
-        {
-            pos.x = ventOut1_X;
-            pos.y = ventOut1_Y;
-            gameObject.transform.position = pos;
-        }
-        if(flg1 == true)
-        {
-            pos.x = ventOut1_X;
-            pos.y = ventOut1_Y;
-            gameObject.transform.position = pos;
-        }  
-        if(flg2 == true)
-        {
-            pos.x = ventOut2_X;
-            pos.y = ventOut2_Y;
-            gameObject.transform.position = pos;
         }
 
         //PlayerPrefs.SetInt("WoldClear", 1);
@@ -166,8 +132,21 @@ public class GaviController : MonoBehaviour
             backbutton.SetActive(false);
             //地面との設置状況を受け取る
             isGroundAll = GroundCheck();
-            //常に右へ進み続ける、影響受けない、段差止まる
-            rb.velocity = new Vector2(speed, rb.velocity.y);
+            if (rflg)
+            {
+                //常に右へ進み続ける、影響受けない、段差止まる
+                rb.velocity = new Vector2(speed, rb.velocity.y);
+                this.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                FollowCamera.cameraX = 5;
+            }
+            else
+            {
+                //常に左へ進み続ける、影響受けない、段差止まる
+                rb.velocity = new Vector2(rspeed, rb.velocity.y);
+                // ローカル座標基準で、現在の回転量へ加算する
+                this.transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
+                FollowCamera.cameraX = -5;
+            }
             //transform.Translate(transform.right * Time.deltaTime * 3 * speed);
             //接地していればジャンプ可能
             if (Input.GetKeyDown(KeyCode.C) && isGroundAll == true && JampEne > 0)
@@ -191,6 +170,10 @@ public class GaviController : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+
+    }
 
     //ジャンプする
     private void Jump()
@@ -234,6 +217,16 @@ public class GaviController : MonoBehaviour
             //プライヤーをワープ先に移動
             Player.transform.position = Worp.transform.position;
         }
+
+        if (coll.gameObject.tag == "Reverse")
+        {
+            rflg = false;
+        }
+
+        if (coll.gameObject.tag == "RReverse")
+        {
+            rflg = true;
+        }
     }
 
     //何かに入った
@@ -241,11 +234,13 @@ public class GaviController : MonoBehaviour
     {
         if (coll.gameObject.tag == "Worp1")
         {
-            flg1 = true;
+            //プライヤーをワープ先に移動
+            Player.transform.position = Worp1.transform.position;
         }
         if (coll.gameObject.tag == "Worp2")
         {
-            flg2 = true;
+            //プライヤーをワープ先に移動
+            Player.transform.position = Worp2.transform.position;
         }
         if (coll.gameObject.tag == "Goal")
         {
@@ -319,14 +314,6 @@ public class GaviController : MonoBehaviour
         if (coll.gameObject.tag == "ground")
         {
             isGroundExit = true;
-        }
-        if (coll.gameObject.tag == "Worp1")
-        {
-            flg1 = false;
-        }
-        if (coll.gameObject.tag == "Worp2")
-        {
-            flg2 = false;
         }
     }
 
