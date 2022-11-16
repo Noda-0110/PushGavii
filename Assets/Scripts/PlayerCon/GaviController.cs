@@ -207,16 +207,6 @@ public class GaviController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D coll)
     {
         Lifelength = LifeCount.Length - 1;
-        if (coll.gameObject.tag == "Enemy")
-        {
-            //ライフを減らす
-            heart--;
-            Reset();
-            Jumpheel();
-            restart = true;
-            //プライヤーをワープ先に移動
-            Player.transform.position = Worp.transform.position;
-        }
 
         if (coll.gameObject.tag == "Reverse")
         {
@@ -232,6 +222,16 @@ public class GaviController : MonoBehaviour
     //何かに入った
     private void OnTriggerEnter2D(Collider2D coll)
     {
+        if (coll.gameObject.tag == "Enemy")
+        {
+            //ライフを減らす
+            heart--;
+            Reset();
+            Jumpheel();
+            restart = true;
+            //プライヤーをワープ先に移動
+            Player.transform.position = Worp.transform.position;
+        }
         if (coll.gameObject.tag == "Worp1")
         {
             //プライヤーをワープ先に移動
