@@ -29,6 +29,27 @@ public class GaviController : MonoBehaviour
     public GameObject HelpPack2;
     [Header("ヘルプを出すブロック2")]
     public GameObject Help2;
+
+    [Header("ワープ1-1の出口")]
+    public float worp1_1_X;
+    public float worp1_1_Y;
+    [Header("ワープ1-2の出口")]
+    public float worp1_2_X;
+    public float worp1_2_Y;
+    [Header("ワープ2-1の出口")]
+    public float worp2_1_X;
+    public float worp2_1_Y;
+    [Header("ワープ2-2の出口")]
+    public float worp2_2_X;
+    public float worp2_2_Y;
+
+    //ワープ時に使用
+    private bool wflg1_1 = false;
+    private bool wflg1_2 = false;
+    private bool wflg2_1 = false;
+    private bool wflg2_2 = false;
+
+
     //ジャンプの最大回数を入れる器
     private int JampMax;
     //ワールドクリアに使う
@@ -89,6 +110,32 @@ public class GaviController : MonoBehaviour
     }
     void Update()
     {
+        //ワープ時に使用
+        Vector3 pos = gameObject.transform.position;
+        if (wflg1_1)
+        {
+            pos.x = worp1_1_X;
+            pos.y = worp1_1_Y;
+            gameObject.transform.position = pos;
+        }
+        if (wflg1_2)
+        {
+            pos.x = worp1_2_X;
+            pos.y = worp1_2_Y;
+            gameObject.transform.position = pos;
+        }
+        if (wflg2_1)
+        {
+            pos.x = worp2_1_X;
+            pos.y = worp2_1_Y;
+            gameObject.transform.position = pos;
+        }
+        if (wflg2_2)
+        {
+            pos.x = worp2_2_X;
+            pos.y = worp2_2_Y;
+            gameObject.transform.position = pos;
+        }
         Debug.Log(heart);
         if (helpmode1 == true)
         {
@@ -232,15 +279,21 @@ public class GaviController : MonoBehaviour
             //プライヤーをワープ先に移動
             Player.transform.position = Worp.transform.position;
         }
-        if (coll.gameObject.tag == "Worp1")
+        if (coll.gameObject.tag == "Worp1-1")
         {
-            //プライヤーをワープ先に移動
-            Player.transform.position = Worp1.transform.position;
+            wflg1_1 = true;
         }
-        if (coll.gameObject.tag == "Worp2")
+        if (coll.gameObject.tag == "Worp1-2")
         {
-            //プライヤーをワープ先に移動
-            Player.transform.position = Worp2.transform.position;
+            wflg1_2 = true;
+        }
+        if (coll.gameObject.tag == "Worp2-1")
+        {
+            wflg2_1 = true;
+        }
+        if (coll.gameObject.tag == "Worp2-2")
+        {
+            wflg2_2 = true;
         }
         if (coll.gameObject.tag == "Goal")
         {
@@ -311,6 +364,23 @@ public class GaviController : MonoBehaviour
     //何かから出た
     private void OnTriggerExit2D(Collider2D coll)
     {
+        if (coll.gameObject.tag == "Worp1-1")
+        {
+            wflg1_1 = false;
+        }
+        if (coll.gameObject.tag == "Worp1-2")
+        {
+            wflg1_2 = false;
+        }
+        if (coll.gameObject.tag == "Worp2-1")
+        {
+            wflg2_1 = false;
+        }
+        if (coll.gameObject.tag == "Worp2-2")
+        {
+            wflg2_2 = false;
+        }
+
         if (coll.gameObject.tag == "ground")
         {
             isGroundExit = true;
