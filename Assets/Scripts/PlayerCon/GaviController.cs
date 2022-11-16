@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 
 public class GaviController : MonoBehaviour
 {
+    public bool KeyConMode = false;
     [Header("現在のステージ(クリア状況更新用)")]
     public int nowstage;
     [Header("体力")]
@@ -179,32 +180,62 @@ public class GaviController : MonoBehaviour
             backbutton.SetActive(false);
             //地面との設置状況を受け取る
             isGroundAll = GroundCheck();
-            if (rflg)
+
+            Vector2 keypos = transform.position;
+            //ガービィをキー操作できるようにする
+            if (KeyConMode)
             {
-                //常に右へ進み続ける、影響受けない、段差止まる
-                rb.velocity = new Vector2(speed, rb.velocity.y);
-                this.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
-                FollowCamera.cameraX = 5;
+                float keyspeed = 0.05f;
+                float keyjump = 0.05f;
+                if (Input.GetKey(KeyCode.LeftArrow))
+                {
+                    keypos.x -= keyspeed;
+                }
+                if (Input.GetKey(KeyCode.RightArrow))
+                {
+                    keypos.x += keyspeed;
+                }        
+                if (Input.GetKey(KeyCode.UpArrow))
+                {
+                    keypos.y += keyjump;
+                }
+                if (Input.GetKey(KeyCode.DownArrow))
+                {
+                    keypos.y -= keyjump;
+                }
+                transform.position = keypos;
+
             }
+            //通常操作
             else
             {
-                //常に左へ進み続ける、影響受けない、段差止まる
-                rb.velocity = new Vector2(rspeed, rb.velocity.y);
-                // ローカル座標基準で、現在の回転量へ加算する
-                this.transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
-                FollowCamera.cameraX = -5;
-            }
-            //transform.Translate(transform.right * Time.deltaTime * 3 * speed);
-            //接地していればジャンプ可能
-            if (Input.GetKeyDown(KeyCode.C) && isGroundAll == true && JampEne > 0)
-            {
-                JampEne--;
-                Jump();//ジャンプする
-            }        //接地していればジャンプ可能
-            if (Input.GetKeyDown(KeyCode.M) && isGroundAll == true && JampEne > 0)
-            {
-                JampEne--;
-                Jump();//ジャンプする
+                if (rflg)
+                {
+                    //常に右へ進み続ける、影響受けない、段差止まる
+                    rb.velocity = new Vector2(speed, rb.velocity.y);
+                    this.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                    FollowCamera.cameraX = 5;
+                }
+                else
+                {
+                    //常に左へ進み続ける、影響受けない、段差止まる
+                    rb.velocity = new Vector2(rspeed, rb.velocity.y);
+                    // ローカル座標基準で、現在の回転量へ加算する
+                    this.transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
+                    FollowCamera.cameraX = -5;
+                }
+                //transform.Translate(transform.right * Time.deltaTime * 3 * speed);
+                //接地していればジャンプ可能
+                if (Input.GetKeyDown(KeyCode.C) && isGroundAll == true && JampEne > 0)
+                {
+                    JampEne--;
+                    Jump();//ジャンプする
+                }        //接地していればジャンプ可能
+                if (Input.GetKeyDown(KeyCode.M) && isGroundAll == true && JampEne > 0)
+                {
+                    JampEne--;
+                    Jump();//ジャンプする
+                }
             }
         }
         //残機を表示
