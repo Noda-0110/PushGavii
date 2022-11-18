@@ -58,3 +58,6 @@ TagManager:
   - name: GameLayer
     uniqueID: 2995088121
     locked: 0
+  - name: HelpLayer
+    uniqueID: 2627916123
+    locked: 0
