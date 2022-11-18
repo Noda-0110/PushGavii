@@ -12,10 +12,12 @@ TagManager:
   - LastGoal
   - Help1
   - Help2
-  - Worp1
-  - Worp2
   - Reverse
   - RReverse
+  - Worp1-1
+  - Worp1-2
+  - Worp2-1
+  - Worp2-2
   layers:
   - Default
   - TransparentFX

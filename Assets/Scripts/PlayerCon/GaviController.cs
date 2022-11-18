@@ -10,6 +10,7 @@ using UnityEngine.SceneManagement;
 
 public class GaviController : MonoBehaviour
 {
+    public bool KeyConMode = false;
     [Header("現在のステージ(クリア状況更新用)")]
     public int nowstage;
     [Header("体力")]
@@ -29,6 +30,27 @@ public class GaviController : MonoBehaviour
     public GameObject HelpPack2;
     [Header("ヘルプを出すブロック2")]
     public GameObject Help2;
+
+    [Header("ワープ1-1の出口")]
+    public float worp1_1_X;
+    public float worp1_1_Y;
+    [Header("ワープ1-2の出口")]
+    public float worp1_2_X;
+    public float worp1_2_Y;
+    [Header("ワープ2-1の出口")]
+    public float worp2_1_X;
+    public float worp2_1_Y;
+    [Header("ワープ2-2の出口")]
+    public float worp2_2_X;
+    public float worp2_2_Y;
+
+    //ワープ時に使用
+    private bool wflg1_1 = false;
+    private bool wflg1_2 = false;
+    private bool wflg2_1 = false;
+    private bool wflg2_2 = false;
+
+
     //ジャンプの最大回数を入れる器
     private int JampMax;
     //ワールドクリアに使う
@@ -89,6 +111,32 @@ public class GaviController : MonoBehaviour
     }
     void Update()
     {
+        //ワープ時に使用
+        Vector3 pos = gameObject.transform.position;
+        if (wflg1_1)
+        {
+            pos.x = worp1_1_X;
+            pos.y = worp1_1_Y;
+            gameObject.transform.position = pos;
+        }
+        if (wflg1_2)
+        {
+            pos.x = worp1_2_X;
+            pos.y = worp1_2_Y;
+            gameObject.transform.position = pos;
+        }
+        if (wflg2_1)
+        {
+            pos.x = worp2_1_X;
+            pos.y = worp2_1_Y;
+            gameObject.transform.position = pos;
+        }
+        if (wflg2_2)
+        {
+            pos.x = worp2_2_X;
+            pos.y = worp2_2_Y;
+            gameObject.transform.position = pos;
+        }
         Debug.Log(heart);
         if (helpmode1 == true)
         {
@@ -132,32 +180,62 @@ public class GaviController : MonoBehaviour
             backbutton.SetActive(false);
             //地面との設置状況を受け取る
             isGroundAll = GroundCheck();
-            if (rflg)
+
+            Vector2 keypos = transform.position;
+            //ガービィをキー操作できるようにする
+            if (KeyConMode)
             {
-                //常に右へ進み続ける、影響受けない、段差止まる
-                rb.velocity = new Vector2(speed, rb.velocity.y);
-                this.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
-                FollowCamera.cameraX = 5;
+                float keyspeed = 0.05f;
+                float keyjump = 0.05f;
+                if (Input.GetKey(KeyCode.LeftArrow))
+                {
+                    keypos.x -= keyspeed;
+                }
+                if (Input.GetKey(KeyCode.RightArrow))
+                {
+                    keypos.x += keyspeed;
+                }        
+                if (Input.GetKey(KeyCode.UpArrow))
+                {
+                    keypos.y += keyjump;
+                }
+                if (Input.GetKey(KeyCode.DownArrow))
+                {
+                    keypos.y -= keyjump;
+                }
+                transform.position = keypos;
+
             }
+            //通常操作
             else
             {
-                //常に左へ進み続ける、影響受けない、段差止まる
-                rb.velocity = new Vector2(rspeed, rb.velocity.y);
-                // ローカル座標基準で、現在の回転量へ加算する
-                this.transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
-                FollowCamera.cameraX = -5;
-            }
-            //transform.Translate(transform.right * Time.deltaTime * 3 * speed);
-            //接地していればジャンプ可能
-            if (Input.GetKeyDown(KeyCode.C) && isGroundAll == true && JampEne > 0)
-            {
-                JampEne--;
-                Jump();//ジャンプする
-            }        //接地していればジャンプ可能
-            if (Input.GetKeyDown(KeyCode.M) && isGroundAll == true && JampEne > 0)
-            {
-                JampEne--;
-                Jump();//ジャンプする
+                if (rflg)
+                {
+                    //常に右へ進み続ける、影響受けない、段差止まる
+                    rb.velocity = new Vector2(speed, rb.velocity.y);
+                    this.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                    FollowCamera.cameraX = 5;
+                }
+                else
+                {
+                    //常に左へ進み続ける、影響受けない、段差止まる
+                    rb.velocity = new Vector2(rspeed, rb.velocity.y);
+                    // ローカル座標基準で、現在の回転量へ加算する
+                    this.transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
+                    FollowCamera.cameraX = -5;
+                }
+                //transform.Translate(transform.right * Time.deltaTime * 3 * speed);
+                //接地していればジャンプ可能
+                if (Input.GetKeyDown(KeyCode.C) && isGroundAll == true && JampEne > 0)
+                {
+                    JampEne--;
+                    Jump();//ジャンプする
+                }        //接地していればジャンプ可能
+                if (Input.GetKeyDown(KeyCode.M) && isGroundAll == true && JampEne > 0)
+                {
+                    JampEne--;
+                    Jump();//ジャンプする
+                }
             }
         }
         //残機を表示
@@ -207,16 +285,6 @@ public class GaviController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D coll)
     {
         Lifelength = LifeCount.Length - 1;
-        if (coll.gameObject.tag == "Enemy")
-        {
-            //ライフを減らす
-            heart--;
-            Reset();
-            Jumpheel();
-            restart = true;
-            //プライヤーをワープ先に移動
-            Player.transform.position = Worp.transform.position;
-        }
 
         if (coll.gameObject.tag == "Reverse")
         {
@@ -232,15 +300,31 @@ public class GaviController : MonoBehaviour
     //何かに入った
     private void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.tag == "Worp1")
+        if (coll.gameObject.tag == "Enemy")
         {
+            //ライフを減らす
+            heart--;
+            Reset();
+            Jumpheel();
+            restart = true;
             //プライヤーをワープ先に移動
-            Player.transform.position = Worp1.transform.position;
+            Player.transform.position = Worp.transform.position;
         }
-        if (coll.gameObject.tag == "Worp2")
+        if (coll.gameObject.tag == "Worp1-1")
         {
-            //プライヤーをワープ先に移動
-            Player.transform.position = Worp2.transform.position;
+            wflg1_1 = true;
+        }
+        if (coll.gameObject.tag == "Worp1-2")
+        {
+            wflg1_2 = true;
+        }
+        if (coll.gameObject.tag == "Worp2-1")
+        {
+            wflg2_1 = true;
+        }
+        if (coll.gameObject.tag == "Worp2-2")
+        {
+            wflg2_2 = true;
         }
         if (coll.gameObject.tag == "Goal")
         {
@@ -311,6 +395,23 @@ public class GaviController : MonoBehaviour
     //何かから出た
     private void OnTriggerExit2D(Collider2D coll)
     {
+        if (coll.gameObject.tag == "Worp1-1")
+        {
+            wflg1_1 = false;
+        }
+        if (coll.gameObject.tag == "Worp1-2")
+        {
+            wflg1_2 = false;
+        }
+        if (coll.gameObject.tag == "Worp2-1")
+        {
+            wflg2_1 = false;
+        }
+        if (coll.gameObject.tag == "Worp2-2")
+        {
+            wflg2_2 = false;
+        }
+
         if (coll.gameObject.tag == "ground")
         {
             isGroundExit = true;

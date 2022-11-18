@@ -653,6 +653,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155687459}
   m_CullTransparentMesh: 1
+--- !u!1 &194638106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 194638107}
+  m_Layer: 0
+  m_Name: EnemyPack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &194638107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194638106}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 63.4, y: 7.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2014307138}
+  - {fileID: 1538392880}
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &206842216
 GameObject:
   m_ObjectHideFlags: 0
@@ -1607,12 +1640,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 580222542}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.952727, y: 11.419963, z: 857.47784}
+  m_LocalPosition: {x: 10, y: 3.7, z: 857.47784}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &642286963
 GameObject:
@@ -2130,7 +2163,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -2246,7 +2279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nowstage: 1
   heart: 5
-  jump: 4
+  jump: 1
   JampEne: 3
   HelpPack1: {fileID: 0}
   Help1: {fileID: 0}
@@ -2309,8 +2342,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da57b4efbce44b4baf08160b693363f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enemy: []
-  EnemyWorp: []
+  Enemy:
+  - {fileID: 2014307132}
+  EnemyWorp:
+  - {fileID: 1538392879}
 --- !u!1 &1100598063
 GameObject:
   m_ObjectHideFlags: 0
@@ -3281,6 +3316,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450386020}
   m_CullTransparentMesh: 1
+--- !u!1 &1538392879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1538392880}
+  m_Layer: 0
+  m_Name: EnemyWorp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1538392880
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538392879}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 194638107}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1550289859
 GameObject:
   m_ObjectHideFlags: 0
@@ -3779,7 +3845,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 194638107}
     m_Modifications:
     - target: {fileID: 7830672166504732224, guid: c05f436200cd0014db6ce597ea412c3b, type: 3}
       propertyPath: speed
@@ -3787,15 +3853,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7830672166504732228, guid: c05f436200cd0014db6ce597ea412c3b, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7830672166504732228, guid: c05f436200cd0014db6ce597ea412c3b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 64.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7830672166504732228, guid: c05f436200cd0014db6ce597ea412c3b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.95
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7830672166504732228, guid: c05f436200cd0014db6ce597ea412c3b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4131,6 +4197,16 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2014307132 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7830672166504732239, guid: c05f436200cd0014db6ce597ea412c3b, type: 3}
+  m_PrefabInstance: {fileID: 1840334809}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2014307138 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7830672166504732228, guid: c05f436200cd0014db6ce597ea412c3b, type: 3}
+  m_PrefabInstance: {fileID: 1840334809}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2054808050
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4140,7 +4216,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6771166852530425436, guid: fa441caf3910c704586eb849720239cc, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6771166852530425436, guid: fa441caf3910c704586eb849720239cc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4284,6 +4360,14 @@ PrefabInstance:
       value: 1.34
       objectReference: {fileID: 0}
     - target: {fileID: -1931337398548839117, guid: e787c5433461faa45931d85da7ded1f9, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465660227571052482, guid: e787c5433461faa45931d85da7ded1f9, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 1.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 1465660227571052482, guid: e787c5433461faa45931d85da7ded1f9, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 1.47
       objectReference: {fileID: 0}
