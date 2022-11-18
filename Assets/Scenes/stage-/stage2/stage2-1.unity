@@ -275,7 +275,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: b885ede1ce200da4f9d9351f5acbd288, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2017,11 +2017,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7077807886573959461, guid: ac4f49a9b46a4d848855cc6b8b24fe4f, type: 3}
       propertyPath: _maxY
-      value: 10
+      value: 2.644
       objectReference: {fileID: 0}
     - target: {fileID: -7077807886573959461, guid: ac4f49a9b46a4d848855cc6b8b24fe4f, type: 3}
       propertyPath: _minY
-      value: -3.5
+      value: -1.03
       objectReference: {fileID: 0}
     - target: {fileID: -7077807886573959461, guid: ac4f49a9b46a4d848855cc6b8b24fe4f, type: 3}
       propertyPath: _maxWS
@@ -4411,7 +4411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3532536280116813539, guid: c2f66326cb9c77b43ab022445ca7900b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: 3532536280116813539, guid: c2f66326cb9c77b43ab022445ca7900b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4447,7 +4447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4276057033853698915, guid: c2f66326cb9c77b43ab022445ca7900b, type: 3}
       propertyPath: _maxX
-      value: 50
+      value: 41.1
       objectReference: {fileID: 0}
     - target: {fileID: 4276057033853698915, guid: c2f66326cb9c77b43ab022445ca7900b, type: 3}
       propertyPath: _maxY
@@ -4455,7 +4455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4276057033853698915, guid: c2f66326cb9c77b43ab022445ca7900b, type: 3}
       propertyPath: _minX
-      value: 30
+      value: 36.4
       objectReference: {fileID: 0}
     - target: {fileID: 4276057033853698915, guid: c2f66326cb9c77b43ab022445ca7900b, type: 3}
       propertyPath: _minY
@@ -6299,7 +6299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4276057033853698915, guid: c2f66326cb9c77b43ab022445ca7900b, type: 3}
       propertyPath: _maxX
-      value: 100
+      value: 71.4
       objectReference: {fileID: 0}
     - target: {fileID: 4276057033853698915, guid: c2f66326cb9c77b43ab022445ca7900b, type: 3}
       propertyPath: _maxY
@@ -6307,7 +6307,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4276057033853698915, guid: c2f66326cb9c77b43ab022445ca7900b, type: 3}
       propertyPath: _minX
-      value: 30
+      value: 68.3
       objectReference: {fileID: 0}
     - target: {fileID: 4276057033853698915, guid: c2f66326cb9c77b43ab022445ca7900b, type: 3}
       propertyPath: _minY
@@ -6501,11 +6501,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7077807886573959461, guid: ac4f49a9b46a4d848855cc6b8b24fe4f, type: 3}
       propertyPath: _maxY
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -7077807886573959461, guid: ac4f49a9b46a4d848855cc6b8b24fe4f, type: 3}
       propertyPath: _minY
-      value: -3.5
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: -7077807886573959461, guid: ac4f49a9b46a4d848855cc6b8b24fe4f, type: 3}
       propertyPath: _maxWS
