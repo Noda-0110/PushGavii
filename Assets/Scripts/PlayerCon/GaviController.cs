@@ -329,6 +329,7 @@ public class GaviController : MonoBehaviour
         if (coll.gameObject.tag == "Goal")
         {
             speed = 0;
+            rspeed = 0;
             //クリアステージの更新、選択画面へ
             PlayerPrefs.SetInt("StageClear", nowstage + 1);
             Gavianimator.SetBool("Bye", true);
@@ -338,6 +339,7 @@ public class GaviController : MonoBehaviour
         if (coll.gameObject.tag == "LastGoal")
         {
             speed = 0;
+            rspeed = 0;
             //クリアステージの更新、選択画面へ
             PlayerPrefs.SetInt("WoldClear", CrearWorld + 1);
             Gavianimator.SetBool("Bye", true);
