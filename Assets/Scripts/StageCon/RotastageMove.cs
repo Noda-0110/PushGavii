@@ -7,7 +7,7 @@ public class RotastageMove : MonoBehaviour
     private Vector3 _initalPosision;
     private Quaternion _initalRotation;
     [Header("‰ñ“]‘¬“x")]
-    public float speed = 0.5f;
+    private float speed = 0.1f;
     public bool restart = false;
     public bool Engine = false;
 

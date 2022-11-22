@@ -370,7 +370,7 @@ public class GaviController : MonoBehaviour
     }
     IEnumerator StageCrear()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene("stage" + CrearWorld);
     }
 
