@@ -2522,6 +2522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30c3b0e3dc2171346a6466e9bbcaf32c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KeyConMode: 0
   nowstage: 3
   heart: 5
   jump: 4
@@ -2530,6 +2531,14 @@ MonoBehaviour:
   Help1: {fileID: 0}
   HelpPack2: {fileID: 0}
   Help2: {fileID: 0}
+  worp1_1_X: 0
+  worp1_1_Y: 0
+  worp1_2_X: 0
+  worp1_2_Y: 0
+  worp2_1_X: 0
+  worp2_1_Y: 0
+  worp2_2_X: 0
+  worp2_2_Y: 0
   cameraX: 5
   Worp1: {fileID: 0}
   Worp2: {fileID: 0}
@@ -4583,6 +4592,10 @@ PrefabInstance:
     - target: {fileID: 6771166852530425436, guid: fa441caf3910c704586eb849720239cc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6771166852530425437, guid: fa441caf3910c704586eb849720239cc, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6771166852530425438, guid: fa441caf3910c704586eb849720239cc, type: 3}
       propertyPath: m_Name
