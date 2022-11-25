@@ -35,12 +35,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/stage-/stage2/stage2-3.unity
     guid: cd07c0bcb1614c04b834fa9d35a53c58
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/stage-/stage0Wold.unity
     guid: 6654535498d4cbe49916252e38db17fd
@@ -56,6 +50,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/stage-/stage4/stage4-1.unity
     guid: e754ebeee19aad34aa51fe23bc55e854
+  - enabled: 1
+    path: Assets/Scenes/stage-/stage5/stage5.unity
+    guid: 9fb4d415372220d43b2a948f3b46b898
+  - enabled: 1
+    path: Assets/Scenes/stage-/stage5/stage5-1.unity
+    guid: 82f21b5b24dd66f48b5393413167996d
+  - enabled: 1
+    path: Assets/Scenes/stage-/stage5/stage5-2.unity
+    guid: 1e5594eda3a81f1479363605fd43ce85
+  - enabled: 1
+    path: Assets/Scenes/stage-/stage5/stage5-3.unity
+    guid: 02c4227e32b6b804faf94b02e4d6940d
   - enabled: 1
     path: Assets/Scenes/OverScene.unity
     guid: c3a602dac8e81e643bf2ade75f8cdf32
