@@ -24,7 +24,7 @@ public class Stageselect : MonoBehaviour
 
     void Update()
     {
-        //最後に遊んだステージ
+        //最後に遊んだステージを入れる
         PlayerPrefs.SetInt("StagePlay", nowWold);
         //Worp[1]までは選択可能
         clearstage = PlayerPrefs.GetInt("StageClear", 1);

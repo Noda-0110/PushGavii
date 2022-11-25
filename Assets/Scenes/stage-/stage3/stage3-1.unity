@@ -563,7 +563,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1299879175
   m_SortingLayer: 1
-  m_SortingOrder: 5
+  m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: 6f2d324f8a5262341a335b43e674bf7c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2409,7 +2409,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30c3b0e3dc2171346a6466e9bbcaf32c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KeyConMode: 0
   nowstage: 1
   heart: 5
   jump: 4
@@ -2426,6 +2425,10 @@ MonoBehaviour:
   worp2_1_Y: 0
   worp2_2_X: 0
   worp2_2_Y: 0
+  worp3_1_X: 0
+  worp3_1_Y: 0
+  worp3_2_X: 0
+  worp3_2_Y: 0
   cameraX: 5
   Worp1: {fileID: 0}
   Worp2: {fileID: 0}
