@@ -43,12 +43,20 @@ public class GaviController : MonoBehaviour
     [Header("ワープ2-2の出口")]
     public float worp2_2_X;
     public float worp2_2_Y;
+    [Header("ワープ3-1の出口")]
+    public float worp3_1_X;
+    public float worp3_1_Y;
+    [Header("ワープ3-2の出口")]
+    public float worp3_2_X;
+    public float worp3_2_Y;
 
     //ワープ時に使用
     private bool wflg1_1 = false;
     private bool wflg1_2 = false;
     private bool wflg2_1 = false;
     private bool wflg2_2 = false;
+    private bool wflg3_1 = false;
+    private bool wflg3_2 = false;
 
 
     //ジャンプの最大回数を入れる器
@@ -64,6 +72,7 @@ public class GaviController : MonoBehaviour
 
     //反転
     private bool rflg = true;
+    [Header("カメラの位置")]
     public float cameraX = 5;
 
     [Header("ワープ先１ Tag:Worp1")]
@@ -135,6 +144,18 @@ public class GaviController : MonoBehaviour
         {
             pos.x = worp2_2_X;
             pos.y = worp2_2_Y;
+            gameObject.transform.position = pos;
+        }
+        if (wflg3_1)
+        {
+            pos.x = worp3_1_X;
+            pos.y = worp3_1_Y;
+            gameObject.transform.position = pos;
+        }
+        if (wflg3_2)
+        {
+            pos.x = worp3_2_X;
+            pos.y = worp3_2_Y;
             gameObject.transform.position = pos;
         }
         Debug.Log(heart);
@@ -326,6 +347,14 @@ public class GaviController : MonoBehaviour
         {
             wflg2_2 = true;
         }
+        if (coll.gameObject.tag == "Worp3-1")
+        {
+            wflg3_1 = true;
+        }
+        if (coll.gameObject.tag == "Worp3-2")
+        {
+            wflg3_2 = true;
+        }
         if (coll.gameObject.tag == "Goal")
         {
             speed = 0;
@@ -412,6 +441,14 @@ public class GaviController : MonoBehaviour
         if (coll.gameObject.tag == "Worp2-2")
         {
             wflg2_2 = false;
+        }
+        if (coll.gameObject.tag == "Worp3-1")
+        {
+            wflg3_1 = false;
+        }
+        if (coll.gameObject.tag == "Worp3-2")
+        {
+            wflg3_2 = false;
         }
 
         if (coll.gameObject.tag == "ground")
