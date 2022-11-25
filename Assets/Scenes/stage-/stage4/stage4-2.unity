@@ -5615,7 +5615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyConMode: 0
-  nowstage: 1
+  nowstage: 2
   heart: 5
   jump: 4
   JampEne: 3
@@ -5631,6 +5631,10 @@ MonoBehaviour:
   worp2_1_Y: 0
   worp2_2_X: 0
   worp2_2_Y: 0
+  worp3_1_X: 0
+  worp3_1_Y: 0
+  worp3_2_X: 0
+  worp3_2_Y: 0
   cameraX: 5
   Worp1: {fileID: 0}
   Worp2: {fileID: 0}

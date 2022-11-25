@@ -120,8 +120,8 @@ public class GaviController : MonoBehaviour
     }
     void Update()
     {
-        //ワープ時に使用
-        Vector3 pos = gameObject.transform.position;
+            //ワープ時に使用
+            Vector3 pos = gameObject.transform.position;
         if (wflg1_1)
         {
             pos.x = worp1_1_X;

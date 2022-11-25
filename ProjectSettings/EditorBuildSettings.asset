@@ -45,11 +45,23 @@ EditorBuildSettings:
     path: Assets/Scenes/stage-/stage3/stage3-1.unity
     guid: 40e1f040cb743e74c9a88ba581c856e8
   - enabled: 1
+    path: Assets/Scenes/stage-/stage3/stage3-2.unity
+    guid: 206db8a19aef8dd4ebbf26121d489b25
+  - enabled: 1
+    path: Assets/Scenes/stage-/stage3/stage3-3.unity
+    guid: 424ff0d262dbe0347b8b814775092381
+  - enabled: 1
     path: Assets/Scenes/stage-/stage4/stage4.unity
     guid: 4e55e81540a57a349857d6d0fb7f27f2
   - enabled: 1
     path: Assets/Scenes/stage-/stage4/stage4-1.unity
     guid: e754ebeee19aad34aa51fe23bc55e854
+  - enabled: 1
+    path: Assets/Scenes/stage-/stage4/stage4-2.unity
+    guid: 5fa24de16c0320d47b7865b1f1238cef
+  - enabled: 1
+    path: Assets/Scenes/stage-/stage4/stage4-3.unity
+    guid: f3a2088b969abfa49be9fcb7520097ee
   - enabled: 1
     path: Assets/Scenes/stage-/stage5/stage5.unity
     guid: 9fb4d415372220d43b2a948f3b46b898

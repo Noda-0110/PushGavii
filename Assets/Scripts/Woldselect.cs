@@ -73,5 +73,12 @@ public class Woldselect : MonoBehaviour
         PlayerPrefs.DeleteKey("WoldClear");
         PlayerPrefs.DeleteKey("StageClear");
     }
+    public void DataCLEAR()
+    {
+        //ÉNÉäÉAÇµÇΩÇ±Ç∆Ç…Ç∑ÇÈ
+        PlayerPrefs.DeleteKey("StagePlay");
+        PlayerPrefs.SetInt("WoldClear", 6);
+        PlayerPrefs.SetInt("StageClear", 6);
+    }
 
 }
