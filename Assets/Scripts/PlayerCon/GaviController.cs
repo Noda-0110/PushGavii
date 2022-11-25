@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 
 public class GaviController : MonoBehaviour
 {
-    public bool KeyConMode = false;
+    private bool KeyConMode = true;
     [Header("現在のステージ(クリア状況更新用)")]
     public int nowstage;
     [Header("体力")]
