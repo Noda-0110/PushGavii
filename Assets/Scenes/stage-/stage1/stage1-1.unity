@@ -3365,6 +3365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30c3b0e3dc2171346a6466e9bbcaf32c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nowwold: 1
   nowstage: 1
   heart: 5
   jump: 4
