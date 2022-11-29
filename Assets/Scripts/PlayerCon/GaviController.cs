@@ -11,6 +11,8 @@ using UnityEngine.SceneManagement;
 public class GaviController : MonoBehaviour
 {
     private bool KeyConMode = false;
+    [Header("現在のワールド(クリア状況更新用)")]
+    public int nowwold;
     [Header("現在のステージ(クリア状況更新用)")]
     public int nowstage;
     [Header("体力")]
@@ -355,7 +357,7 @@ public class GaviController : MonoBehaviour
             speed = 0;
             rspeed = 0;
             //クリアステージの更新、選択画面へ
-            PlayerPrefs.SetInt("StageClear", nowstage + 1);
+            PlayerPrefs.SetInt("StageClear"+nowwold, nowstage + 1);
             Gavianimator.SetBool("Bye", true);
             StartCoroutine(StageCrear());
         }
