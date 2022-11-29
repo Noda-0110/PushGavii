@@ -71,6 +71,7 @@ public class GaviController : MonoBehaviour
 
     private GameObject Player;
     private GameObject Worp;
+    private GameObject PushEnter;
 
     //反転
     private bool rflg = true;
@@ -119,6 +120,8 @@ public class GaviController : MonoBehaviour
         Player = GameObject.Find("Chara");
         //復活位置を取得
         Worp = GameObject.Find("Worp");
+        //プッシュエンターを取得
+        PushEnter = GameObject.Find("PushEnter");
     }
     void Update()
     {
@@ -195,6 +198,7 @@ public class GaviController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             Engine = true;
+            PushEnter.SetActive(false);
             Gavianimator.SetBool("Engine", true);
         }
         //エンジンを付けたら
