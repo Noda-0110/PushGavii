@@ -71,14 +71,24 @@ public class Woldselect : MonoBehaviour
         //クリア状況のリセット
         PlayerPrefs.DeleteKey("StagePlay");
         PlayerPrefs.DeleteKey("WoldClear");
-        PlayerPrefs.DeleteKey("StageClear");
+        PlayerPrefs.DeleteKey("StageClear1");
+        PlayerPrefs.DeleteKey("StageClear2");
+        PlayerPrefs.DeleteKey("StageClear3");
+        PlayerPrefs.DeleteKey("StageClear4");
+        PlayerPrefs.DeleteKey("StageClear5");
+        PlayerPrefs.DeleteKey("StageClear6");
     }
     public void DataCLEAR()
     {
         //クリアしたことにする
         PlayerPrefs.DeleteKey("StagePlay");
         PlayerPrefs.SetInt("WoldClear", 6);
-        PlayerPrefs.SetInt("StageClear", 6);
+        PlayerPrefs.SetInt("StageClear1", 6);
+        PlayerPrefs.SetInt("StageClear2", 6);
+        PlayerPrefs.SetInt("StageClear3", 6);
+        PlayerPrefs.SetInt("StageClear4", 6);
+        PlayerPrefs.SetInt("StageClear5", 6);
+        PlayerPrefs.SetInt("StageClear6", 6);
     }
 
 }

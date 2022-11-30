@@ -21,9 +21,11 @@ public class Stageselect : MonoBehaviour
     public int nowWold = 0;        //åªç›ÇÃÉèÅ[ÉãÉh
 
     [SerializeField] private Animator Worpanimator;
-
+    public AudioClip worpsound;
+    AudioSource audioSource;
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -164,6 +166,7 @@ public class Stageselect : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
+                audioSource.PlayOneShot(worpsound);
                 StartCoroutine(WorpAnim());
             }
         }
