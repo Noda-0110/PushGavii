@@ -21,9 +21,14 @@ public class Stageselect : MonoBehaviour
     public int nowWold = 0;        //現在のワールド
 
     [SerializeField] private Animator Worpanimator;
-
+    public AudioClip worpsound;
+    AudioSource audioSource;
+    public AudioClip selectsound;
+    AudioSource audioSource2;
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource2 = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -95,6 +100,7 @@ public class Stageselect : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
+            audioSource.PlayOneShot(selectsound);
             if (Nowold == 1)
             {
                 //ステージの数より先には進まない
@@ -152,6 +158,7 @@ public class Stageselect : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            audioSource.PlayOneShot(selectsound);
             //０よりも前に戻らない
             if (0 < nowStage)
             {
@@ -164,6 +171,7 @@ public class Stageselect : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
+                audioSource.PlayOneShot(worpsound);
                 StartCoroutine(WorpAnim());
             }
         }
