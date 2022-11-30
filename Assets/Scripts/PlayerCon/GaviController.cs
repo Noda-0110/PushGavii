@@ -33,6 +33,23 @@ public class GaviController : MonoBehaviour
     [Header("ヘルプを出すブロック2")]
     public GameObject Help2;
 
+    [Header("メインカメラ")]
+    public Camera Camera;
+    [Header("サブカメラ")]
+    public Camera subCamera;
+    [Header("キャンバス")]
+    public GameObject Canvas;
+
+    //サブカメラの場合のみ非表示
+    private GameObject dlcv1;
+    private GameObject dlcv2;
+    private GameObject dlcv3;
+    private GameObject dlcv4;
+    private GameObject dlcv5;
+    private GameObject dlcv6;
+    private GameObject dlcv7;
+
+
     [Header("ワープ1-1の出口")]
     public float worp1_1_X;
     public float worp1_1_Y;
@@ -122,6 +139,16 @@ public class GaviController : MonoBehaviour
         Worp = GameObject.Find("Worp");
         //プッシュエンターを取得
         PushEnter = GameObject.Find("PushEnter");
+        //Canvas内のオブジェクト
+        dlcv1 = GameObject.Find("BGMSlider");
+        dlcv2 = GameObject.Find("LifeBack");
+        dlcv3 = GameObject.Find("JampBack");
+        dlcv4 = GameObject.Find("Life");
+        dlcv5 = GameObject.Find("BackButton");
+        dlcv6 = GameObject.Find("Number-Life");
+        dlcv7 = GameObject.Find("Number-Jump");
+        //初めはサブカメラをオフにしておく
+        subCamera.enabled = false;
     }
     void Update()
     {
@@ -477,5 +504,55 @@ public class GaviController : MonoBehaviour
             JampCount[i].SetActive(false);
         }
         JampEne = 3;
+    }
+
+    public void PushButtonCamera()
+    {
+        //もしサブカメラがオフだったら
+        if (!subCamera.enabled)
+        {
+            //サブカメラをオンにして
+            subCamera.enabled = true;
+
+            //カメラをオフにする
+            Camera.enabled = false;
+
+            //PushEnterを非表示にする
+            PushEnter.SetActive(false);
+
+            dlcv1.SetActive(false);
+            dlcv2.SetActive(false);
+            dlcv3.SetActive(false);
+            dlcv4.SetActive(false);
+            dlcv5.SetActive(false);
+            dlcv6.SetActive(false);
+            dlcv7.SetActive(false);
+
+            //キャンバスを映すカメラをサブカメラオブジェクトにする
+            Canvas.GetComponent<Canvas>().worldCamera = subCamera;
+        }
+        //もしサブカメラがオンだったら
+        else
+        {
+            //サブカメラをオフにして
+            subCamera.enabled = false;
+
+            //カメラをオンにする
+            Camera.enabled = true;
+
+            //PushEnterを表示する
+            PushEnter.SetActive(true);
+
+            dlcv1.SetActive(true);
+            dlcv2.SetActive(true);
+            dlcv3.SetActive(true);
+            dlcv4.SetActive(true);
+            dlcv5.SetActive(true);
+            dlcv6.SetActive(true);
+            dlcv7.SetActive(true);
+
+            //キャンバスを映すカメラをカメラオブジェクトにする
+            Canvas.GetComponent<Canvas>().worldCamera = Camera;
+        }
     }
 }
