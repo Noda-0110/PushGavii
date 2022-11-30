@@ -443,6 +443,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 883090313}
   m_CullTransparentMesh: 1
+--- !u!1 &897090144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 897090145}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &897090145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897090144}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.5874553, y: -3.5483193, z: 2.6126366}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1230530847
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,6 +839,10 @@ PrefabInstance:
       propertyPath: nowWold
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3434527587122495100, guid: f0323329956ad6243b0ebcec9e863b4a, type: 3}
+      propertyPath: selectsound
+      value: 
+      objectReference: {fileID: 8300000, guid: f3d155d9a6d7df64f9f9fbb8ba9caf20, type: 3}
     - target: {fileID: 3434527587122495100, guid: f0323329956ad6243b0ebcec9e863b4a, type: 3}
       propertyPath: Worpanimator
       value: 
