@@ -43,6 +43,9 @@ public class GaviController : MonoBehaviour
 
     Animator StageAnimator;
 
+    //カメラ使用時のガービィの操作を制限するやつ
+    private bool cammode = true;
+
     //サブカメラの場合のみ非表示
     private GameObject dlcv1;
     private GameObject dlcv2;
@@ -229,13 +232,15 @@ public class GaviController : MonoBehaviour
         }
         //残りジャンプ回数を表示
         JampCount[JampEne].SetActive(true);
-
-        //エンターでエンジンを起動
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (cammode == false)
         {
-            Engine = true;
-            PushEnter.SetActive(false);
-            Gavianimator.SetBool("Engine", true);
+            //エンターでエンジンを起動
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                Engine = true;
+                PushEnter.SetActive(false);
+                Gavianimator.SetBool("Engine", true);
+            }
         }
         //エンジンを付けたら
         if (Engine == true)
@@ -520,6 +525,8 @@ public class GaviController : MonoBehaviour
         //もしサブカメラがオフだったら
         if (!subCamera.enabled)
         {
+            //カメラモードオン（操作を制限）
+            cammode = true;
             //サブカメラをオンにして
             subCamera.enabled = true;
 
@@ -549,6 +556,8 @@ public class GaviController : MonoBehaviour
         //もしサブカメラがオンだったら
         else
         {
+            //カメラモードオフ（操作制限解除）  
+            cammode = false;
             //サブカメラをオフにして
             subCamera.enabled = false;
 
