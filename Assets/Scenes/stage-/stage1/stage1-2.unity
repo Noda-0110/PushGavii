@@ -3285,6 +3285,9 @@ MonoBehaviour:
   Help1: {fileID: 265336786}
   HelpPack2: {fileID: 1735941790}
   Help2: {fileID: 931796155}
+  Camera: {fileID: 0}
+  subCamera: {fileID: 0}
+  Canvas: {fileID: 0}
   worp1_1_X: 0
   worp1_1_Y: 0
   worp1_2_X: 0
@@ -3389,7 +3392,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
