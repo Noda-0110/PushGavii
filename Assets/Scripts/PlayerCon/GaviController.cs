@@ -37,8 +37,11 @@ public class GaviController : MonoBehaviour
     public Camera Camera;
     [Header("サブカメラ")]
     public Camera subCamera;
-    [Header("キャンバス")]
-    public GameObject Canvas;
+
+    //キャンバス
+    private GameObject Canvas;
+
+    Animator StageAnimator;
 
     //サブカメラの場合のみ非表示
     private GameObject dlcv1;
@@ -48,6 +51,8 @@ public class GaviController : MonoBehaviour
     private GameObject dlcv5;
     private GameObject dlcv6;
     private GameObject dlcv7;
+
+    private GameObject ChangeButton;
 
 
     [Header("ワープ1-1の出口")]
@@ -139,6 +144,8 @@ public class GaviController : MonoBehaviour
         Worp = GameObject.Find("Worp");
         //プッシュエンターを取得
         PushEnter = GameObject.Find("PushEnter");
+        //ステージを見る用のアニメーション
+        StageAnimator = subCamera.gameObject.GetComponent<Animator>();
         //Canvas内のオブジェクト
         dlcv1 = GameObject.Find("BGMSlider");
         dlcv2 = GameObject.Find("LifeBack");
@@ -147,6 +154,8 @@ public class GaviController : MonoBehaviour
         dlcv5 = GameObject.Find("BackButton");
         dlcv6 = GameObject.Find("Number-Life");
         dlcv7 = GameObject.Find("Number-Jump");
+        Canvas = GameObject.Find("Canvas");
+        ChangeButton = GameObject.Find("SubButton");
         //初めはサブカメラをオフにしておく
         subCamera.enabled = false;
     }
@@ -517,6 +526,12 @@ public class GaviController : MonoBehaviour
             //カメラをオフにする
             Camera.enabled = false;
 
+            
+            StageAnimator.SetBool("PlayMap",true);
+
+
+            ChangeButton.GetComponentInChildren<Text>().text = "ステージに戻る";
+
             //PushEnterを非表示にする
             PushEnter.SetActive(false);
 
@@ -539,6 +554,12 @@ public class GaviController : MonoBehaviour
 
             //カメラをオンにする
             Camera.enabled = true;
+
+
+            StageAnimator.SetBool("PlayMap", false);
+
+
+            ChangeButton.GetComponentInChildren<Text>().text = "ステージを見る";
 
             //PushEnterを表示する
             PushEnter.SetActive(true);
