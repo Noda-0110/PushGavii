@@ -44,7 +44,7 @@ public class GaviController : MonoBehaviour
     Animator StageAnimator;
 
     //カメラ使用時のガービィの操作を制限するやつ
-    private bool cammode = true;
+    private bool cammode = false;
 
     //サブカメラの場合のみ非表示
     private GameObject dlcv1;
@@ -239,6 +239,7 @@ public class GaviController : MonoBehaviour
             {
                 Engine = true;
                 PushEnter.SetActive(false);
+                ChangeButton.SetActive(false);
                 Gavianimator.SetBool("Engine", true);
             }
         }
