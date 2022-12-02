@@ -2976,7 +2976,9 @@ MonoBehaviour:
   - {fileID: 1033691243}
   - {fileID: 2124330092}
   clearwold: 0
+  Worpanimator: {fileID: 1869902855}
   selectsound: {fileID: 8300000, guid: f3d155d9a6d7df64f9f9fbb8ba9caf20, type: 3}
+  worpsound: {fileID: 8300000, guid: 1cc0b8fd9a50d1045942ba60cb06f367, type: 3}
 --- !u!82 &1213153494
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2989,7 +2991,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0

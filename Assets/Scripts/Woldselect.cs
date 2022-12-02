@@ -15,8 +15,10 @@ public class Woldselect : MonoBehaviour
 
     public int clearwold;  //クリアしたステージ
 
+    [SerializeField] private Animator Worpanimator;
     AudioSource audioSource;
     public AudioClip selectsound;
+    public AudioClip worpsound;
 
     void Start()
     {
@@ -65,6 +67,13 @@ public class Woldselect : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
+            audioSource.PlayOneShot(worpsound);
+            StartCoroutine(WorpAnim());
+        }
+        IEnumerator WorpAnim()
+        {
+            Worpanimator.SetBool("StageBack", true);
+            yield return new WaitForSeconds(2);
             SceneManager.LoadScene("stage" + now);
         }
 
@@ -72,6 +81,8 @@ public class Woldselect : MonoBehaviour
         Debug.Log(now);
         Debug.Log("現在のクリアしたワールドは" + clearwold + "まで");
     }
+
+
 
     public void DataReset()
     {

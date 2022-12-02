@@ -185,8 +185,15 @@ public class Stageselect : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                SceneManager.LoadScene("stage0Wold");
+                audioSource.PlayOneShot(worpsound);
+                StartCoroutine(WorpAnim2());
             }
+        }
+        IEnumerator WorpAnim2()
+        {
+            Worpanimator.SetBool("StageBack", true);
+            yield return new WaitForSeconds(2);
+            SceneManager.LoadScene("stage0Wold");
         }
     }
 }
