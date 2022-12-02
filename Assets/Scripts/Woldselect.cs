@@ -15,8 +15,13 @@ public class Woldselect : MonoBehaviour
 
     public int clearwold;  //クリアしたステージ
 
+    AudioSource audioSource;
+    public AudioClip selectsound;
+
     void Start()
     {
+
+        audioSource = GetComponent<AudioSource>();
 
         lastplay = PlayerPrefs.GetInt("StagePlay", 1);
         if (Input.GetKeyDown(KeyCode.Return))
@@ -39,6 +44,7 @@ public class Woldselect : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
+            audioSource.PlayOneShot(selectsound);
             //ステージの数より先には進まない
             if (Stagelength > now && now < clearwold)
             {
@@ -48,6 +54,7 @@ public class Woldselect : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            audioSource.PlayOneShot(selectsound);
             //０よりも前に戻らない
             if (0 < now)
             {
