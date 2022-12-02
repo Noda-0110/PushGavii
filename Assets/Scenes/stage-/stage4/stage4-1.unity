@@ -6414,6 +6414,8 @@ MonoBehaviour:
   Help1: {fileID: 454502124}
   HelpPack2: {fileID: 0}
   Help2: {fileID: 0}
+  Camera: {fileID: 0}
+  subCamera: {fileID: 0}
   worp1_1_X: 0
   worp1_1_Y: 0
   worp1_2_X: 0
@@ -8693,7 +8695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}

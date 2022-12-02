@@ -3169,7 +3169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -3588,7 +3588,6 @@ MonoBehaviour:
   Help2: {fileID: 448872298}
   Camera: {fileID: 2030160337}
   subCamera: {fileID: 1743748379}
-  Canvas: {fileID: 374023828}
   worp1_1_X: 0
   worp1_1_Y: 0
   worp1_2_X: 0
@@ -3707,7 +3706,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -4580,7 +4579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
