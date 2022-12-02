@@ -1472,6 +1472,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1398486826}
     - target: {fileID: 3434527587122495100, guid: f0323329956ad6243b0ebcec9e863b4a, type: 3}
+      propertyPath: nowWold
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434527587122495100, guid: f0323329956ad6243b0ebcec9e863b4a, type: 3}
       propertyPath: Worpanimator
       value: 
       objectReference: {fileID: 1524059995}
