@@ -13,6 +13,8 @@ public class Woldselect : MonoBehaviour
     private int Stagelength;         //ステージの大きさの器
     private int lastplay;
 
+    
+
     public int clearwold;  //クリアしたステージ
 
     [SerializeField] private Animator Worpanimator;
