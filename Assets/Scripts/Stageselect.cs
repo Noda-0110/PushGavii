@@ -15,6 +15,18 @@ public class Stageselect : MonoBehaviour
     public int clearstage6;  //クリアしたステージ
     public GameObject Player;   //プレイヤーの位置
     public GameObject[] Worp;   //ワープ先の位置
+    [Header("ステージ１の旗")]
+    public GameObject[] WorpLock1;   //旗を入れる
+    [Header("ステージ２の旗")]
+    public GameObject[] WorpLock2;   //旗を入れる
+    [Header("ステージ３の旗")]
+    public GameObject[] WorpLock3;   //旗を入れる
+    [Header("ステージ４の旗")]
+    public GameObject[] WorpLock4;   //旗を入れる
+    [Header("ステージ５の旗")]
+    public GameObject[] WorpLock5;   //旗を入れる
+    [Header("ステージ６の旗")]
+    public GameObject[] WorpLock6;   //旗を入れる
     private int nowStage = 0;        //現在のステージ
     private int Stagelength;         //ステージの大きさの器
     [Header("現在のワールドの数字を入力")]
@@ -45,32 +57,32 @@ public class Stageselect : MonoBehaviour
         Stagelength = Worp.Length - 1;
         if (nowWold == 1)
         {
-            clearstage1 = PlayerPrefs.GetInt("StageClear" + 1, 1); 
+            clearstage1 = PlayerPrefs.GetInt("StageClear" + 1, 1);
             stagemove(1);
         }
         if (nowWold == 2)
         {
-            clearstage2 = PlayerPrefs.GetInt("StageClear" + 2, 1); 
+            clearstage2 = PlayerPrefs.GetInt("StageClear" + 2, 1);
             stagemove(2);
         }
         if (nowWold == 3)
         {
-            clearstage3 = PlayerPrefs.GetInt("StageClear" + 3, 1); 
+            clearstage3 = PlayerPrefs.GetInt("StageClear" + 3, 1);
             stagemove(3);
         }
         if (nowWold == 4)
         {
-            clearstage4 = PlayerPrefs.GetInt("StageClear" + 4, 1); 
+            clearstage4 = PlayerPrefs.GetInt("StageClear" + 4, 1);
             stagemove(4);
         }
         if (nowWold == 5)
         {
-            clearstage5 = PlayerPrefs.GetInt("StageClear" + 5, 1); 
+            clearstage5 = PlayerPrefs.GetInt("StageClear" + 5, 1);
             stagemove(5);
         }
         if (nowWold == 6)
         {
-            clearstage6 = PlayerPrefs.GetInt("StageClear" + 6, 1); 
+            clearstage6 = PlayerPrefs.GetInt("StageClear" + 6, 1);
             stagemove(6);
         }
         

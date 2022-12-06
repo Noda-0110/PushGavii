@@ -9,6 +9,7 @@ public class Woldselect : MonoBehaviour
 
     public GameObject Player;   //プレイヤーの位置
     public GameObject[] Worp;   //ワープ先の位置
+    public GameObject[] WorpLock;   //ワープ先の位置
     private int now = 0;        //現在のステージ
     private int Stagelength;         //ステージの大きさの器
     private int lastplay;
@@ -79,6 +80,36 @@ public class Woldselect : MonoBehaviour
             SceneManager.LoadScene("stage" + now);
         }
 
+        if(clearwold == 1)
+        {
+            WorpLock[0].SetActive(false);
+        }
+        if(clearwold >= 2)
+        {
+            WorpLock[1].SetActive(false);
+            WorpLock[0].SetActive(false);
+        }
+        if(clearwold >= 3)
+        {
+            WorpLock[1].SetActive(false);
+            WorpLock[2].SetActive(false);
+            WorpLock[0].SetActive(false);
+        }
+        if(clearwold >= 4)
+        {
+            WorpLock[1].SetActive(false);
+            WorpLock[2].SetActive(false);
+            WorpLock[3].SetActive(false);
+            WorpLock[0].SetActive(false);
+        }
+        if(clearwold >= 5)
+        {
+            WorpLock[1].SetActive(false);
+            WorpLock[2].SetActive(false);
+            WorpLock[3].SetActive(false);
+            WorpLock[4].SetActive(false);
+            WorpLock[0].SetActive(false);
+        }
 
         Debug.Log(now);
         Debug.Log("現在のクリアしたワールドは" + clearwold + "まで");
