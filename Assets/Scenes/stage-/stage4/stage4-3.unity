@@ -6427,7 +6427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nowwold: 4
-  nowstage: 1
+  nowstage: 3
   heart: 5
   jump: 4
   JampEne: 3
