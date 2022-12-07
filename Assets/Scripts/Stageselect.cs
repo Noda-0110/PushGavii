@@ -129,7 +129,7 @@ public class Stageselect : MonoBehaviour
                 WorpLock1[0].SetActive(true);
                 WorpLock1[1].SetActive(true);
             }
-            if(clsta == 4)
+            if(clsta >= 4)
             {
                 WorpLock1[0].SetActive(true);
                 WorpLock1[1].SetActive(true);
@@ -147,7 +147,7 @@ public class Stageselect : MonoBehaviour
                 WorpLock2[0].SetActive(true);
                 WorpLock2[1].SetActive(true);
             }
-            if(clsta == 4)
+            if(clsta >= 4)
             {
                 WorpLock2[0].SetActive(true);
                 WorpLock2[1].SetActive(true);
@@ -165,7 +165,7 @@ public class Stageselect : MonoBehaviour
                 WorpLock3[0].SetActive(true);
                 WorpLock3[1].SetActive(true);
             }
-            if(clsta == 4)
+            if(clsta >= 4)
             {
                 WorpLock3[0].SetActive(true);
                 WorpLock3[1].SetActive(true);
@@ -183,7 +183,7 @@ public class Stageselect : MonoBehaviour
                 WorpLock4[0].SetActive(true);
                 WorpLock4[1].SetActive(true);
             }
-            if(clsta == 4)
+            if(clsta >= 4)
             {
                 WorpLock4[0].SetActive(true);
                 WorpLock4[1].SetActive(true);
@@ -201,7 +201,7 @@ public class Stageselect : MonoBehaviour
                 WorpLock5[0].SetActive(true);
                 WorpLock5[1].SetActive(true);
             }
-            if(clsta == 4)
+            if(clsta >= 4)
             {
                 WorpLock1[0].SetActive(true);
                 WorpLock1[1].SetActive(true);
