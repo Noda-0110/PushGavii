@@ -58,35 +58,42 @@ public class Stageselect : MonoBehaviour
         if (nowWold == 1)
         {
             clearstage1 = PlayerPrefs.GetInt("StageClear" + 1, 1);
+            clearflag(1,clearstage1);
             stagemove(1);
         }
         if (nowWold == 2)
         {
             clearstage2 = PlayerPrefs.GetInt("StageClear" + 2, 1);
+            clearflag(2, clearstage2);
             stagemove(2);
         }
         if (nowWold == 3)
         {
             clearstage3 = PlayerPrefs.GetInt("StageClear" + 3, 1);
+            clearflag(3, clearstage3);
             stagemove(3);
         }
         if (nowWold == 4)
         {
             clearstage4 = PlayerPrefs.GetInt("StageClear" + 4, 1);
+            clearflag(4, clearstage4);
             stagemove(4);
         }
         if (nowWold == 5)
         {
             clearstage5 = PlayerPrefs.GetInt("StageClear" + 5, 1);
+            clearflag(5, clearstage5);
             stagemove(5);
         }
         if (nowWold == 6)
         {
             clearstage6 = PlayerPrefs.GetInt("StageClear" + 6, 1);
+            clearflag(6, clearstage6);
             stagemove(6);
         }
-        
-        Debug.Log(nowStage);
+
+        Debug.Log("現在のワールドは" + nowWold);
+        Debug.Log("現在のステージは" + nowStage);
         switch(nowWold){
             case 1:
                 Debug.Log("現在のクリアしたステージは" + clearstage1 + "まで");
@@ -106,6 +113,100 @@ public class Stageselect : MonoBehaviour
             case 6:
                 Debug.Log("現在のクリアしたステージは" + clearstage6 + "まで");
                 break;
+        }
+    }
+
+    public void clearflag(int Nowold,int clsta)
+    {
+        if(Nowold == 1)
+        {
+            if(clsta == 2)
+            {
+                WorpLock1[0].SetActive(true);
+            }
+            if(clsta == 3)
+            {
+                WorpLock1[0].SetActive(true);
+                WorpLock1[1].SetActive(true);
+            }
+            if(clsta >= 4)
+            {
+                WorpLock1[0].SetActive(true);
+                WorpLock1[1].SetActive(true);
+                WorpLock1[2].SetActive(true);
+            }
+        }
+        if(Nowold == 2)
+        {
+            if(clsta == 2)
+            {
+                WorpLock2[0].SetActive(true);
+            }
+            if(clsta == 3)
+            {
+                WorpLock2[0].SetActive(true);
+                WorpLock2[1].SetActive(true);
+            }
+            if(clsta >= 4)
+            {
+                WorpLock2[0].SetActive(true);
+                WorpLock2[1].SetActive(true);
+                WorpLock2[2].SetActive(true);
+            }
+        }
+        if(Nowold == 3)
+        {
+            if(clsta == 2)
+            {
+                WorpLock3[0].SetActive(true);
+            }
+            if(clsta == 3)
+            {
+                WorpLock3[0].SetActive(true);
+                WorpLock3[1].SetActive(true);
+            }
+            if(clsta >= 4)
+            {
+                WorpLock3[0].SetActive(true);
+                WorpLock3[1].SetActive(true);
+                WorpLock3[2].SetActive(true);
+            }
+        }
+        if(Nowold == 4)
+        {
+            if(clsta == 2)
+            {
+                WorpLock4[0].SetActive(true);
+            }
+            if(clsta == 3)
+            {
+                WorpLock4[0].SetActive(true);
+                WorpLock4[1].SetActive(true);
+            }
+            if(clsta >= 4)
+            {
+                WorpLock4[0].SetActive(true);
+                WorpLock4[1].SetActive(true);
+                WorpLock4[2].SetActive(true);
+            }
+        }
+        if(Nowold == 5)
+        {
+            if(clsta == 2)
+            {
+                WorpLock5[0].SetActive(true);
+            }
+            if (clsta == 3)
+            {
+                WorpLock5[0].SetActive(true);
+                WorpLock5[1].SetActive(true);
+            }
+            if(clsta >= 4)
+            {
+                WorpLock1[0].SetActive(true);
+                WorpLock1[1].SetActive(true);
+                WorpLock1[2].SetActive(true);
+            }
         }
     }
     public void stagemove(int Nowold)
