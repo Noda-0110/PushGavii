@@ -279,7 +279,7 @@ public class Stageselect : MonoBehaviour
                 Player.transform.position = Worp[nowStage].transform.position;
             }
         }
-
+        //ステージ内へ
         if (nowStage > 0)
         {
             if (Input.GetKeyDown(KeyCode.Return))
@@ -290,10 +290,20 @@ public class Stageselect : MonoBehaviour
         }
         IEnumerator WorpAnim()
         {
+            int newmovie = PlayerPrefs.GetInt("movie" + nowWold, 0);
             Worpanimator.SetBool("StageBack", true);
             yield return new WaitForSeconds(2);
-            SceneManager.LoadScene("stage" + nowWold + "-" + nowStage);
+            if (newmovie == 0)
+            {
+                SceneManager.LoadScene("moviestage" + nowWold);
+
+            }
+            else
+            {
+                SceneManager.LoadScene("stage" + nowWold + "-" + nowStage);
+            }
         }
+        //ワールドへ戻る
         if (nowStage == 0)
         {
             if (Input.GetKeyDown(KeyCode.Return))

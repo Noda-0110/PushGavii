@@ -128,6 +128,12 @@ public class Woldselect : MonoBehaviour
         PlayerPrefs.DeleteKey("StageClear4");
         PlayerPrefs.DeleteKey("StageClear5");
         PlayerPrefs.DeleteKey("StageClear6");
+        PlayerPrefs.DeleteKey("movie1");
+        PlayerPrefs.DeleteKey("movie2");
+        PlayerPrefs.DeleteKey("movie3");
+        PlayerPrefs.DeleteKey("movie4");
+        PlayerPrefs.DeleteKey("movie5");
+        PlayerPrefs.DeleteKey("movie6");
     }
     public void DataCLEAR()
     {
