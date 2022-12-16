@@ -12,6 +12,7 @@ public class TitleHouse0 : MonoBehaviour
     [SerializeField] private Animator stage4anim_tobira_ue;
     [SerializeField] private Animator stage4anim_tobira_sita;
     [SerializeField] private Animator stage4anim_tobira_temae;
+    [SerializeField] private Animator stage4anim_kamera;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +51,7 @@ public class TitleHouse0 : MonoBehaviour
                     stage4anim_tobira_ue.SetBool("PushEnter", true);
                     stage4anim_tobira_sita.SetBool("PushEnter", true);
                     stage4anim_tobira_temae.SetBool("PushEnter", true);
+                    stage4anim_kamera.SetBool("PushEnter", true);
                     StartCoroutine(houkai());
                 }
             }
