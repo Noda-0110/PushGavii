@@ -8,11 +8,13 @@ public class TitleHouse0 : MonoBehaviour
     private int lastplay,newmovie;
     public bool Title;
     public bool stage4;
+    public bool stage5;
     [SerializeField] private Animator stage4anim_tobira;
     [SerializeField] private Animator stage4anim_tobira_ue;
     [SerializeField] private Animator stage4anim_tobira_sita;
     [SerializeField] private Animator stage4anim_tobira_temae;
     [SerializeField] private Animator stage4anim_kamera;
+    [SerializeField] private Animator stage5anim_pod;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +36,7 @@ public class TitleHouse0 : MonoBehaviour
         }
         else
         {
-            if (stage4 == false)
+            if (stage4 == false && stage5 == false)
             {
                 //エンターキーでHouseへ
                 if (Input.GetKeyDown(KeyCode.Return))
@@ -55,9 +57,23 @@ public class TitleHouse0 : MonoBehaviour
                     StartCoroutine(houkai());
                 }
             }
+            else if(stage5 == true)
+            {
+                if(Input.GetKeyDown(KeyCode.Return))
+                {
+                    stage5anim_pod.SetBool("PushEnter", true);
+                    StartCoroutine(burori());
+                }
+            }
             IEnumerator houkai()
             {
                 yield return new WaitForSeconds(8);
+                PlayerPrefs.SetInt("movie" + lastplay, 1);
+                SceneManager.LoadScene("stage" + lastplay + "-1");
+            }
+            IEnumerator burori()
+            {
+                yield return new WaitForSeconds(5);
                 PlayerPrefs.SetInt("movie" + lastplay, 1);
                 SceneManager.LoadScene("stage" + lastplay + "-1");
             }
