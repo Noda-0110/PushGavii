@@ -252,6 +252,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Title: 1
+  stage4: 0
+  stage5: 0
+  stage4anim_tobira: {fileID: 0}
+  stage4anim_tobira_ue: {fileID: 0}
+  stage4anim_tobira_sita: {fileID: 0}
+  stage4anim_tobira_temae: {fileID: 0}
+  stage4anim_kamera: {fileID: 0}
+  stage5anim_pod: {fileID: 0}
 --- !u!1 &139872339
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,6 +1061,7 @@ GameObject:
   - component: {fileID: 929654812}
   - component: {fileID: 929654811}
   - component: {fileID: 929654813}
+  - component: {fileID: 929654814}
   m_Layer: 0
   m_Name: titleimg 1
   m_TagString: Untagged
@@ -1147,6 +1156,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &929654814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929654810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53f20b757ad9ffb48a1fc631fa7f3bcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1103994413
 GameObject:
   m_ObjectHideFlags: 0
