@@ -46,5 +46,9 @@ public class LifeBarCon : MonoBehaviour
 
             lifeimg.fillAmount = 0.15f;
         }
+        if(heart == 0)
+        {
+            lifeimg.fillAmount = 0f;
+        }
     }
 }
