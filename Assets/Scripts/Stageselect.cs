@@ -203,9 +203,9 @@ public class Stageselect : MonoBehaviour
             }
             if(clsta >= 4)
             {
-                WorpLock1[0].SetActive(true);
-                WorpLock1[1].SetActive(true);
-                WorpLock1[2].SetActive(true);
+                WorpLock5[0].SetActive(true);
+                WorpLock5[1].SetActive(true);
+                WorpLock5[2].SetActive(true);
             }
         }
     }

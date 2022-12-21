@@ -110,6 +110,15 @@ public class Woldselect : MonoBehaviour
             WorpLock[4].SetActive(false);
             WorpLock[0].SetActive(false);
         }
+        if(clearwold >= 6)
+        {
+            WorpLock[1].SetActive(false);
+            WorpLock[2].SetActive(false);
+            WorpLock[3].SetActive(false);
+            WorpLock[4].SetActive(false);
+            WorpLock[5].SetActive(false);
+            WorpLock[0].SetActive(false);
+        }
 
         Debug.Log(now);
         Debug.Log("現在のクリアしたワールドは" + clearwold + "まで");
@@ -139,13 +148,13 @@ public class Woldselect : MonoBehaviour
     {
         //クリアしたことにする
         PlayerPrefs.DeleteKey("StagePlay");
-        PlayerPrefs.SetInt("WoldClear", 6);
-        PlayerPrefs.SetInt("StageClear1", 6);
-        PlayerPrefs.SetInt("StageClear2", 6);
-        PlayerPrefs.SetInt("StageClear3", 6);
-        PlayerPrefs.SetInt("StageClear4", 6);
-        PlayerPrefs.SetInt("StageClear5", 6);
-        PlayerPrefs.SetInt("StageClear6", 6);
+        PlayerPrefs.SetInt("WoldClear", 7);
+        PlayerPrefs.SetInt("StageClear1", 7);
+        PlayerPrefs.SetInt("StageClear2", 7);
+        PlayerPrefs.SetInt("StageClear3", 7);
+        PlayerPrefs.SetInt("StageClear4", 7);
+        PlayerPrefs.SetInt("StageClear5", 7);
+        PlayerPrefs.SetInt("StageClear6", 7);
     }
 
 }
