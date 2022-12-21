@@ -97,6 +97,7 @@ public class GaviController : MonoBehaviour
     private GameObject Player;
     private GameObject Worp;
     private GameObject PushEnter;
+    private GameObject EnjDrawn;
 
     //反転
     private bool rflg = true;
@@ -112,6 +113,7 @@ public class GaviController : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Animator Gavianimator;
     [SerializeField] private Animator Worpanimator;
+    [SerializeField] private Animator Dieanimator;
 
     //接地判定と移動可能か
     [Header("")]
@@ -131,6 +133,9 @@ public class GaviController : MonoBehaviour
     [Header("リセットを管理")]
     public bool restart = false;
 
+    [Header("ガービィの死を管理")]
+    public bool GDie = false;
+
     void Start()
     {
         //ジャンプの最大回数を取得
@@ -147,6 +152,7 @@ public class GaviController : MonoBehaviour
         Worp = GameObject.Find("Worp");
         //プッシュエンターを取得
         PushEnter = GameObject.Find("PushEnter");
+
         //ステージを見る用のアニメーション
         StageAnimator = subCamera.gameObject.GetComponent<Animator>();
         //Canvas内のオブジェクト
@@ -309,12 +315,6 @@ public class GaviController : MonoBehaviour
         }
         //残機を表示
         LifeCount[heart].SetActive(true);
-
-        //ライフが０になったらゲームオーバーへ
-        if (heart == 0)
-        {
-            SceneManager.LoadScene("OverScene");
-        }
     }
 
     //ジャンプする
@@ -350,6 +350,33 @@ public class GaviController : MonoBehaviour
     {
         Lifelength = LifeCount.Length - 1;
 
+        if (coll.gameObject.tag == "Enemy")
+        {
+            //ライフを減らす
+            heart--;
+            Reset();
+            Jumpheel();
+            restart = true;
+            //ライフが０になったらゲームオーバーへ
+            if (heart == 0)
+            {
+                GDie = true;
+                speed = 0;
+                Dieanimator.SetBool("Die", true);
+                StartCoroutine(Die());
+            }
+            else if (heart >= 1)
+            {
+                //プライヤーをワープ先に移動
+                Player.transform.position = Worp.transform.position;
+            }
+            IEnumerator Die()
+            {
+                yield return new WaitForSeconds(5);
+                SceneManager.LoadScene("OverScene");
+            }
+
+        }
         if (coll.gameObject.tag == "Reverse")
         {
             rflg = false;
@@ -364,16 +391,6 @@ public class GaviController : MonoBehaviour
     //何かに入った
     private void OnTriggerEnter2D(Collider2D coll)
     {
-        if (coll.gameObject.tag == "Enemy")
-        {
-            //ライフを減らす
-            heart--;
-            Reset();
-            Jumpheel();
-            restart = true;
-            //プライヤーをワープ先に移動
-            Player.transform.position = Worp.transform.position;
-        }
         if (coll.gameObject.tag == "Worp1-1")
         {
             wflg1_1 = true;

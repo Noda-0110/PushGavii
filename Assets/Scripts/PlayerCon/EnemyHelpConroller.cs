@@ -23,6 +23,9 @@ public class EnemyHelpConroller : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D coll)
     {
+    }
+    private void OnCollisionEnter2D(Collision2D coll)
+    {
         EnemyLen = Enemy.Length - 1;
         if (coll.gameObject.tag == "Enemy")
         {
