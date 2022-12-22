@@ -349,7 +349,24 @@ public class GaviController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D coll)
     {
         Lifelength = LifeCount.Length - 1;
-
+        if(coll.gameObject.tag == "spike")
+        {
+            heart--;
+            Reset();
+            //ライフが０になったらゲームオーバーへ
+            if (heart == 0)
+            {
+                GDie = true;
+                speed = 0;
+                Dieanimator.SetBool("Die", true);
+                StartCoroutine(Die());
+            }
+            IEnumerator Die()
+            {
+                yield return new WaitForSeconds(5);
+                SceneManager.LoadScene("OverScene");
+            }
+        }
         if (coll.gameObject.tag == "Enemy")
         {
             //ライフを減らす
@@ -457,6 +474,15 @@ public class GaviController : MonoBehaviour
             HelpPack2.SetActive(true);
             Time.timeScale = 0;
             helpmode2 = true;
+        }
+        if (coll.gameObject.tag == "Reverse")
+        {
+            rflg = false;
+        }
+
+        if (coll.gameObject.tag == "RReverse")
+        {
+            rflg = true;
         }
     }
     IEnumerator StageCrear()
