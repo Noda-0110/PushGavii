@@ -4125,7 +4125,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 0ec356d9a4f698240a4d939b96c5a746, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4520,12 +4520,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5998481642977587326, guid: c74f999fed79f9448a3181918cb1bdd1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6886254755509391744, guid: c74f999fed79f9448a3181918cb1bdd1, type: 3}
       propertyPath: m_Name
       value: NewWSBar
       objectReference: {fileID: 0}
+    - target: {fileID: 6886254755509391746, guid: c74f999fed79f9448a3181918cb1bdd1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 809380d7ada534b4d8b75e5b17386167, type: 3}
     - target: {fileID: 6886254755509391746, guid: c74f999fed79f9448a3181918cb1bdd1, type: 3}
       propertyPath: m_Color.a
       value: 0
@@ -4588,7 +4592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8484519998673425147, guid: c74f999fed79f9448a3181918cb1bdd1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8705153817634713327, guid: c74f999fed79f9448a3181918cb1bdd1, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
