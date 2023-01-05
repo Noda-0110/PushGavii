@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Stageselect : MonoBehaviour
 {
+    //選択したときの位置を持つ
+    private int worpnum = 0;
     public static Stageselect instance;
     [Header("現在のクリアしたステージ")]
     public int clearstage1;  //クリアしたステージ
@@ -284,6 +286,7 @@ public class Stageselect : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Return))
             {
+                worpnum = nowWold;
                 audioSource.PlayOneShot(worpsound);
                 StartCoroutine(WorpAnim());
             }
@@ -295,12 +298,12 @@ public class Stageselect : MonoBehaviour
             yield return new WaitForSeconds(2);
             if (newmovie == 0)
             {
-                SceneManager.LoadScene("moviestage" + nowWold);
+                SceneManager.LoadScene("moviestage" + worpnum);
 
             }
             else
             {
-                SceneManager.LoadScene("stage" + nowWold + "-" + nowStage);
+                SceneManager.LoadScene("stage" + worpnum + "-" + nowStage);
             }
         }
         //ワールドへ戻る
