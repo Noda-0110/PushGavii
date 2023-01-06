@@ -7,6 +7,8 @@ public class Woldselect : MonoBehaviour
 {
     public static Stageselect instance;
 
+    //選択したときの位置を持つ
+    private int worpnum = 0;
     public GameObject Player;   //プレイヤーの位置
     public GameObject[] Worp;   //ワープ先の位置
     public GameObject[] WorpLock;   //ワープ先の位置
@@ -70,6 +72,7 @@ public class Woldselect : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Return))
         {
+            worpnum = now;
             audioSource.PlayOneShot(worpsound);
             StartCoroutine(WorpAnim());
         }
@@ -77,7 +80,7 @@ public class Woldselect : MonoBehaviour
         {
             Worpanimator.SetBool("StageBack", true);
             yield return new WaitForSeconds(2);
-            SceneManager.LoadScene("stage" + now);
+            SceneManager.LoadScene("stage" + worpnum);
         }
 
         if(clearwold == 1)

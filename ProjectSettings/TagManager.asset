@@ -20,6 +20,7 @@ TagManager:
   - Worp2-2
   - Worp3-1
   - Worp3-2
+  - spike
   layers:
   - Default
   - TransparentFX
