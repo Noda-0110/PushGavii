@@ -136,6 +136,9 @@ public class GaviController : MonoBehaviour
     [Header("ガービィの死を管理")]
     public bool GDie = false;
 
+    //やり直し用
+    private int lastplay;
+
     void Start()
     {
         //ジャンプの最大回数を取得
@@ -170,6 +173,12 @@ public class GaviController : MonoBehaviour
     }
     void Update()
     {
+        //ステージ前にも戻る
+        lastplay = PlayerPrefs.GetInt("StagePlay", 1);
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            SceneManager.LoadScene("stage" + lastplay);
+        }
             //ワープ時に使用
             Vector3 pos = gameObject.transform.position;
         if (wflg1_1)
