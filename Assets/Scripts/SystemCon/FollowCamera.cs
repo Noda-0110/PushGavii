@@ -10,6 +10,7 @@ public class FollowCamera : MonoBehaviour
     [SerializeField] Vector2 camaraMinPos = new Vector2(-5, -5); // カメラの左下限界座標
 
     public static int cameraX = 5;
+    public static int cameraY = 2;
 
     void LateUpdate()
     {
@@ -18,6 +19,7 @@ public class FollowCamera : MonoBehaviour
         Vector3 camPos = transform.position; // カメラの位置
 
         cameraOrgPos.x = cameraX;
+        cameraOrgPos.y = cameraY;
 
         // 滑らかにプレイヤーの場所に追従
         camPos = Vector3.Lerp(transform.position, playerPos + cameraOrgPos, 1.5f * Time.deltaTime);

@@ -21,6 +21,8 @@ TagManager:
   - Worp3-1
   - Worp3-2
   - spike
+  - Gravity
+  - rGravity
   layers:
   - Default
   - TransparentFX
