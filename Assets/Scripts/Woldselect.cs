@@ -63,7 +63,7 @@ public class Woldselect : MonoBehaviour
         {
             audioSource.PlayOneShot(selectsound);
             //‚O‚æ‚è‚à‘O‚É–ß‚ç‚È‚¢
-            if (0 < now)
+            if (1 < now)
             {
                 now--;
                 Player.transform.position = Worp[now].transform.position;
@@ -120,6 +120,16 @@ public class Woldselect : MonoBehaviour
             WorpLock[3].SetActive(false);
             WorpLock[4].SetActive(false);
             WorpLock[5].SetActive(false);
+            WorpLock[0].SetActive(false);
+        }
+        if(clearwold >= 7)
+        {
+            WorpLock[1].SetActive(false);
+            WorpLock[2].SetActive(false);
+            WorpLock[3].SetActive(false);
+            WorpLock[4].SetActive(false);
+            WorpLock[5].SetActive(false);
+            WorpLock[6].SetActive(false);
             WorpLock[0].SetActive(false);
         }
 
