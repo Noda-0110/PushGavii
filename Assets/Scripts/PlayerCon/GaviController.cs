@@ -101,6 +101,10 @@ public class GaviController : MonoBehaviour
 
     //反転
     private bool rflg = true;
+
+    //重力反転
+    private bool gflg = true;
+
     [Header("カメラの位置")]
     public float cameraX = 5;
 
@@ -308,6 +312,29 @@ public class GaviController : MonoBehaviour
                     this.transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
                     FollowCamera.cameraX = -5;
                 }
+
+                if (gflg)
+                {
+                    Physics2D.gravity = new Vector2(0.0f, -9.81f);
+                    // ローカル座標基準で、現在の回転量へ加算する
+                    this.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                    FollowCamera.cameraY = 2;
+                }
+                if(!gflg && !rflg)
+                {
+                    Physics2D.gravity = new Vector2(0.0f, 9.81f);
+                    // ローカル座標基準で、現在の回転量へ加算する
+                    this.transform.rotation = Quaternion.Euler(180.0f, 180.0f, 0.0f);
+                    FollowCamera.cameraY = 0;
+                }
+                if(!gflg && rflg)
+                {
+                    Physics2D.gravity = new Vector2(0.0f, 9.81f);
+                    // ローカル座標基準で、現在の回転量へ加算する
+                    this.transform.rotation = Quaternion.Euler(180.0f, 0.0f, 0.0f);
+                    FollowCamera.cameraY = 0;
+                }
+
                 //transform.Translate(transform.right * Time.deltaTime * 3 * speed);
                 //接地していればジャンプ可能
                 if (Input.GetKeyDown(KeyCode.C) && isGroundAll == true && JampEne > 0)
@@ -410,6 +437,18 @@ public class GaviController : MonoBehaviour
 
         if (coll.gameObject.tag == "RReverse")
         {
+            rflg = true;
+        }
+
+        if (coll.gameObject.tag == "Gravity")
+        {
+            gflg = false;
+            rflg = false;
+        }
+
+        if (coll.gameObject.tag == "rGravity")
+        {
+            gflg = false;
             rflg = true;
         }
     }
