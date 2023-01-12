@@ -4046,6 +4046,7 @@ MonoBehaviour:
   rb: {fileID: 1096896874}
   Gavianimator: {fileID: 1096896883}
   Worpanimator: {fileID: 206842217}
+  Dieanimator: {fileID: 0}
   Engine: 0
   backbutton: {fileID: 1450386020}
   JampCount:
@@ -4065,6 +4066,7 @@ MonoBehaviour:
   - {fileID: 642286963}
   - {fileID: 1317665152}
   restart: 0
+  GDie: 0
 --- !u!95 &1096896883
 Animator:
   serializedVersion: 4
