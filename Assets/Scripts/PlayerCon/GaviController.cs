@@ -20,6 +20,7 @@ public class GaviController : MonoBehaviour
     //[Header("動くスピード")]
     private float speed = 4f;
     private float rspeed = -4f;
+    private float grspeed = -4f;
     [Header("ジャンプの高さ")]
     public float jump = 0;
     [Header("ジャンプ回数")]
@@ -103,7 +104,8 @@ public class GaviController : MonoBehaviour
     private bool rflg = true;
 
     //重力反転
-    private bool gflg = true;
+    private bool gflg = false;
+    private bool grflg = false;
 
     [Header("カメラの位置")]
     public float cameraX = 5;
@@ -304,7 +306,7 @@ public class GaviController : MonoBehaviour
                     this.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
                     FollowCamera.cameraX = 5;
                 }
-                else
+                if(!rflg)
                 {
                     //常に左へ進み続ける、影響受けない、段差止まる
                     rb.velocity = new Vector2(rspeed, rb.velocity.y);
@@ -313,25 +315,30 @@ public class GaviController : MonoBehaviour
                     FollowCamera.cameraX = -5;
                 }
 
-                if (gflg)
+                if (!grflg)
                 {
                     Physics2D.gravity = new Vector2(0.0f, -9.81f);
-                    // ローカル座標基準で、現在の回転量へ加算する
-                    this.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
-                    FollowCamera.cameraY = 2;
                 }
-                if(!gflg && !rflg)
+
+                if (gflg && grflg)
                 {
+                    //常に右へ進み続ける、影響受けない、段差止まる
+                    rb.velocity = new Vector2(grspeed, rb.velocity.y);
                     Physics2D.gravity = new Vector2(0.0f, 9.81f);
                     // ローカル座標基準で、現在の回転量へ加算する
                     this.transform.rotation = Quaternion.Euler(180.0f, 180.0f, 0.0f);
+                    FollowCamera.cameraX = -5;
                     FollowCamera.cameraY = 0;
                 }
-                if(!gflg && rflg)
+
+                if(gflg && !grflg)
                 {
+                    //常に右へ進み続ける、影響受けない、段差止まる
+                    rb.velocity = new Vector2(speed, rb.velocity.y);
                     Physics2D.gravity = new Vector2(0.0f, 9.81f);
                     // ローカル座標基準で、現在の回転量へ加算する
                     this.transform.rotation = Quaternion.Euler(180.0f, 0.0f, 0.0f);
+                    FollowCamera.cameraX = 5;
                     FollowCamera.cameraY = 0;
                 }
 
@@ -421,6 +428,11 @@ public class GaviController : MonoBehaviour
             else if (heart >= 1)
             {
                 //プライヤーをワープ先に移動
+                //常に右へ進み続ける、影響受けない、段差止まる
+                rb.velocity = new Vector2(speed, rb.velocity.y);
+                this.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                gflg = false;
+                grflg = false;
                 Player.transform.position = Worp.transform.position;
             }
             IEnumerator Die()
@@ -442,14 +454,14 @@ public class GaviController : MonoBehaviour
 
         if (coll.gameObject.tag == "Gravity")
         {
-            gflg = false;
-            rflg = false;
+            gflg = true;
+            grflg = true;
         }
 
         if (coll.gameObject.tag == "rGravity")
         {
-            gflg = false;
-            rflg = true;
+            gflg = true;
+            grflg = false;
         }
     }
 
