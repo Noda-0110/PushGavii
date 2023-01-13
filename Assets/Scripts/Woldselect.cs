@@ -24,6 +24,7 @@ public class Woldselect : MonoBehaviour
     AudioSource audioSource;
     public AudioClip selectsound;
     public AudioClip worpsound;
+    private bool endstage = false;
 
     void Start()
     {
@@ -67,6 +68,14 @@ public class Woldselect : MonoBehaviour
             {
                 now--;
                 Player.transform.position = Worp[now].transform.position;
+            }
+            if(endstage == true)
+            {
+                if (0 < now)
+                {
+                    now--;
+                    Player.transform.position = Worp[now].transform.position;
+                }
             }
         }
 
@@ -121,6 +130,8 @@ public class Woldselect : MonoBehaviour
             WorpLock[4].SetActive(false);
             WorpLock[5].SetActive(false);
             WorpLock[0].SetActive(false);
+            endstage = true;
+
         }
         if(clearwold >= 7)
         {
