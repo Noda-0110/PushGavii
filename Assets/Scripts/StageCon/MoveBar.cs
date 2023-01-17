@@ -87,6 +87,7 @@ public class MoveBar : MonoBehaviour
     {
         transform.position = _initalPosision; // ˆÊ’u‚Ì‰Šú‰»
         transform.rotation = _initalRotation; // ‰ñ“]‚Ì‰Šú‰»
+        restart = false;
     }
 
 }

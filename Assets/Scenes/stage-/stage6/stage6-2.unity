@@ -3359,8 +3359,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KeyConMode: 0
-  nowwold: 2
-  nowstage: 1
+  nowwold: 6
+  nowstage: 2
   heart: 5
   jump: 4
   JampEne: 3
@@ -5613,7 +5613,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 130
+  field of view: 128
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -5647,7 +5647,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1743748378}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.05, y: -2.9, z: -7.047358}
+  m_LocalPosition: {x: 3.55, y: 23.49, z: -7.047358}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []

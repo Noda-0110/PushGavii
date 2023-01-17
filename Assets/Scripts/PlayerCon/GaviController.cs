@@ -176,6 +176,9 @@ public class GaviController : MonoBehaviour
         ChangeButton = GameObject.Find("SubButton");
         //初めはサブカメラをオフにしておく
         subCamera.enabled = false;
+        // 重力反転をなくす
+        gflg = false;
+        grflg = false;
     }
     void Update()
     {
@@ -315,12 +318,17 @@ public class GaviController : MonoBehaviour
                     FollowCamera.cameraX = -5;
                 }
 
+                // 元に戻す
                 if (!grflg)
                 {
+                    //常に右へ進み続ける、影響受けない、段差止まる
+                    rb.velocity = new Vector2(speed, rb.velocity.y);
+                    this.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
                     Physics2D.gravity = new Vector2(0.0f, -9.81f);
                     rflg = true;
                 }
 
+                // gflgがtrueで、grflgで反対を向く
                 if (gflg && grflg)
                 {
                     //常に右へ進み続ける、影響受けない、段差止まる
@@ -332,7 +340,8 @@ public class GaviController : MonoBehaviour
                     FollowCamera.cameraY = 0;
                 }
 
-                if(gflg && !grflg)
+                // gflgがtrueで、grflgで正面を向く
+                if (gflg && !grflg)
                 {
                     //常に右へ進み続ける、影響受けない、段差止まる
                     rb.velocity = new Vector2(speed, rb.velocity.y);
@@ -429,12 +438,10 @@ public class GaviController : MonoBehaviour
             else if (heart >= 1)
             {
                 //プライヤーをワープ先に移動
-                //常に右へ進み続ける、影響受けない、段差止まる
-                rb.velocity = new Vector2(speed, rb.velocity.y);
-                this.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                Player.transform.position = Worp.transform.position;
+                // 重力反転をなくす
                 gflg = false;
                 grflg = false;
-                Player.transform.position = Worp.transform.position;
             }
             IEnumerator Die()
             {
