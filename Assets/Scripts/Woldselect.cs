@@ -64,10 +64,14 @@ public class Woldselect : MonoBehaviour
         {
             audioSource.PlayOneShot(selectsound);
             //０よりも前に戻らない
-            if (1 < now)
+
+            if (endstage == false)
             {
-                now--;
-                Player.transform.position = Worp[now].transform.position;
+                if (1 < now)
+                {
+                    now--;
+                    Player.transform.position = Worp[now].transform.position;
+                }
             }
             if(endstage == true)
             {
@@ -122,17 +126,19 @@ public class Woldselect : MonoBehaviour
             WorpLock[4].SetActive(false);
             WorpLock[0].SetActive(false);
         }
+        //ステージ６は解放しない
         if(clearwold >= 6)
         {
             WorpLock[1].SetActive(false);
             WorpLock[2].SetActive(false);
             WorpLock[3].SetActive(false);
             WorpLock[4].SetActive(false);
-            WorpLock[5].SetActive(false);
+            WorpLock[6].SetActive(false);
             WorpLock[0].SetActive(false);
             endstage = true;
 
         }
+        //ステージ０クリア後にステージ６解放
         if(clearwold >= 7)
         {
             WorpLock[1].SetActive(false);

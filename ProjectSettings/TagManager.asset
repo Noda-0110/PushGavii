@@ -23,6 +23,7 @@ TagManager:
   - spike
   - Gravity
   - rGravity
+  - Goal0
   layers:
   - Default
   - TransparentFX

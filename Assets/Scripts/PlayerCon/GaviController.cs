@@ -516,6 +516,16 @@ public class GaviController : MonoBehaviour
             Gavianimator.SetBool("Bye", true);
             StartCoroutine(StageCrear());
         }
+        //最後のステージのゴール
+        if (coll.gameObject.tag == "Goal0")
+        {
+            speed = 0;
+            rspeed = 0;
+            //クリアワールドの更新、選択画面へ
+            PlayerPrefs.SetInt("WoldClear", 7);
+            Gavianimator.SetBool("Bye", true);
+            StartCoroutine(StageCrear0());
+        }
 
         //地面との設置を送る
         if (coll.gameObject.tag == "ground")
@@ -554,6 +564,11 @@ public class GaviController : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene("stage" + CrearWorld);
+    }
+    IEnumerator StageCrear0()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("stage0Wold");
     }
 
 
