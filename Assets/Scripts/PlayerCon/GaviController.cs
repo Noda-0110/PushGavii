@@ -318,6 +318,7 @@ public class GaviController : MonoBehaviour
                 if (!grflg)
                 {
                     Physics2D.gravity = new Vector2(0.0f, -9.81f);
+                    rflg = true;
                 }
 
                 if (gflg && grflg)
@@ -445,11 +446,13 @@ public class GaviController : MonoBehaviour
         if (coll.gameObject.tag == "Reverse")
         {
             rflg = false;
+            grflg = true;
         }
 
         if (coll.gameObject.tag == "RReverse")
         {
             rflg = true;
+            grflg = false;
         }
 
         if (coll.gameObject.tag == "Gravity")
