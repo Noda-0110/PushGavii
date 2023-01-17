@@ -3123,6 +3123,7 @@ MonoBehaviour:
   - {fileID: 642286963}
   - {fileID: 1317665152}
   restart: 0
+  GDie: 0
 --- !u!95 &1096896883
 Animator:
   serializedVersion: 4

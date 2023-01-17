@@ -3176,7 +3176,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 46ae6c640c4d0cb4ebcd295238fdfa4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -3384,7 +3384,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5998481642977587326, guid: c74f999fed79f9448a3181918cb1bdd1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6886254755509391744, guid: c74f999fed79f9448a3181918cb1bdd1, type: 3}
       propertyPath: m_Name
@@ -3396,7 +3396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6886254755509391746, guid: c74f999fed79f9448a3181918cb1bdd1, type: 3}
       propertyPath: m_SortingOrder
-      value: -3
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6886254755509391746, guid: c74f999fed79f9448a3181918cb1bdd1, type: 3}
       propertyPath: m_SortingLayerID
@@ -3456,7 +3456,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8484519998673425147, guid: c74f999fed79f9448a3181918cb1bdd1, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c74f999fed79f9448a3181918cb1bdd1, type: 3}
@@ -5195,7 +5195,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: b885ede1ce200da4f9d9351f5acbd288, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

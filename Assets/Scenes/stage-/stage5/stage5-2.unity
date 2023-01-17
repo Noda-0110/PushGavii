@@ -204,7 +204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9140246982492058024, guid: 63770f46f90ceea42ae358aef407cc42, type: 3}
       propertyPath: m_SortingOrder
-      value: -3
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63770f46f90ceea42ae358aef407cc42, type: 3}
@@ -703,7 +703,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &198031184
 GameObject:
@@ -867,7 +867,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1299879175
   m_SortingLayer: 1
-  m_SortingOrder: 8
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 6f2d324f8a5262341a335b43e674bf7c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -892,7 +892,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &244716996
 GameObject:
@@ -1545,7 +1545,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &374023828
 GameObject:
@@ -1654,7 +1654,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: -1667051173
+  m_SortingLayerID: -1299879175
   m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!1001 &401373865
@@ -1961,7 +1961,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &551656903
 GameObject:
@@ -2880,7 +2880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6886254755509391746, guid: c74f999fed79f9448a3181918cb1bdd1, type: 3}
       propertyPath: m_SortingOrder
-      value: -3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6886254755509391746, guid: c74f999fed79f9448a3181918cb1bdd1, type: 3}
       propertyPath: m_SortingLayerID
@@ -3023,7 +3023,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &736855543
 BoxCollider2D:
@@ -3367,11 +3367,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &910528058 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2418172535858119310, guid: f9a6f0c914c8f034eb1fa028eaa2af24, type: 3}
-  m_PrefabInstance: {fileID: 1841106742}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &989322156
 GameObject:
   m_ObjectHideFlags: 0
@@ -3772,13 +3767,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30c3b0e3dc2171346a6466e9bbcaf32c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  KeyConMode: 0
   nowwold: 5
   nowstage: 2
   heart: 5
   jump: 4
   JampEne: 3
   HelpPack1: {fileID: 1778496623}
-  Help1: {fileID: 910528058}
+  Help1: {fileID: 0}
   HelpPack2: {fileID: 0}
   Help2: {fileID: 0}
   Camera: {fileID: 1690843928}
@@ -3801,6 +3797,7 @@ MonoBehaviour:
   rb: {fileID: 1096896874}
   Gavianimator: {fileID: 1096896883}
   Worpanimator: {fileID: 206842217}
+  Dieanimator: {fileID: 0}
   Engine: 0
   backbutton: {fileID: 1450386020}
   JampCount:
@@ -3820,6 +3817,7 @@ MonoBehaviour:
   - {fileID: 642286963}
   - {fileID: 1317665152}
   restart: 0
+  GDie: 0
 --- !u!95 &1096896883
 Animator:
   serializedVersion: 4
@@ -4070,9 +4068,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1667051173
-  m_SortingLayer: 2
-  m_SortingOrder: 2
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 46ae6c640c4d0cb4ebcd295238fdfa4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4348,7 +4346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7803081286839474349, guid: 15ff8dfb38496b64490cfdc2256025f2, type: 3}
       propertyPath: m_SortingOrder
-      value: -3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7803081286839474350, guid: 15ff8dfb38496b64490cfdc2256025f2, type: 3}
       propertyPath: m_Name
@@ -5692,7 +5690,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1555285724
 GameObject:
@@ -5815,7 +5813,7 @@ Transform:
   - {fileID: 1131585065}
   - {fileID: 374023829}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1569526544
 GameObject:
@@ -6052,7 +6050,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!61 &1610528359
 BoxCollider2D:
@@ -6163,7 +6161,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!61 &1628949911
 BoxCollider2D:
@@ -6361,12 +6359,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690843927}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.952727, y: 52.1, z: 857.47784}
+  m_LocalPosition: {x: 20.05, y: 52.48, z: 857.47784}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1729935899
 GameObject:
@@ -7005,7 +7003,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2003050544
 GameObject:
@@ -7108,7 +7106,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6886254755509391746, guid: c74f999fed79f9448a3181918cb1bdd1, type: 3}
       propertyPath: m_SortingOrder
-      value: -3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6886254755509391746, guid: c74f999fed79f9448a3181918cb1bdd1, type: 3}
       propertyPath: m_SortingLayerID
@@ -7238,9 +7236,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1667051173
-  m_SortingLayer: 2
-  m_SortingOrder: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: b885ede1ce200da4f9d9351f5acbd288, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -7382,7 +7380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6645348091151825183, guid: e787c5433461faa45931d85da7ded1f9, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6645348091151825183, guid: e787c5433461faa45931d85da7ded1f9, type: 3}
       propertyPath: m_LocalPosition.x

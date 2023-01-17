@@ -254,6 +254,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6771166852530425437, guid: fa441caf3910c704586eb849720239cc, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6771166852530425438, guid: fa441caf3910c704586eb849720239cc, type: 3}
       propertyPath: m_Name
       value: NewRoBar
@@ -3373,7 +3377,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 46ae6c640c4d0cb4ebcd295238fdfa4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5677,7 +5681,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690843927}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.952727, y: 52.1, z: 857.47784}
+  m_LocalPosition: {x: 19.6, y: 54.17, z: 857.47784}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6708,7 +6712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6886254755509391746, guid: c74f999fed79f9448a3181918cb1bdd1, type: 3}
       propertyPath: m_SortingOrder
-      value: -3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6886254755509391746, guid: c74f999fed79f9448a3181918cb1bdd1, type: 3}
       propertyPath: m_SortingLayerID
@@ -6840,7 +6844,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: b885ede1ce200da4f9d9351f5acbd288, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
