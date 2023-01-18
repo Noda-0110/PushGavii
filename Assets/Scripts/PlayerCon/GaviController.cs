@@ -33,6 +33,8 @@ public class GaviController : MonoBehaviour
     public GameObject HelpPack2;
     [Header("ヘルプを出すブロック2")]
     public GameObject Help2;
+    [Header("ステージ0でキャンバス")]
+    public GameObject canobj;
 
     [Header("メインカメラ")]
     public Camera Camera;
@@ -118,6 +120,7 @@ public class GaviController : MonoBehaviour
     [Header("プレイヤーの特性(バウンドとか)")]
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Animator Gavianimator;
+    [SerializeField] private Animator stage0animator;
     [SerializeField] private Animator Worpanimator;
     [SerializeField] private Animator Dieanimator;
 
@@ -184,10 +187,7 @@ public class GaviController : MonoBehaviour
     {
         //ステージ前にも戻る
         lastplay = PlayerPrefs.GetInt("StagePlay", 1);
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            SceneManager.LoadScene("stage" + lastplay);
-        }
+
             //ワープ時に使用
             Vector3 pos = gameObject.transform.position;
         if (wflg1_1)
@@ -226,7 +226,7 @@ public class GaviController : MonoBehaviour
             pos.y = worp3_2_Y;
             gameObject.transform.position = pos;
         }
-        Debug.Log(heart);
+        //Debug.Log(heart);
         if (helpmode1 == true)
         {
             if (Input.GetKeyDown(KeyCode.Return))
@@ -270,7 +270,7 @@ public class GaviController : MonoBehaviour
         //エンジンを付けたら
         if (Engine == true)
         {
-            backbutton.SetActive(false);
+            //backbutton.SetActive(false);
             //地面との設置状況を受け取る
             isGroundAll = GroundCheck();
 
@@ -528,9 +528,11 @@ public class GaviController : MonoBehaviour
         {
             speed = 0;
             rspeed = 0;
+            canobj.SetActive(false);
             //クリアワールドの更新、選択画面へ
             PlayerPrefs.SetInt("WoldClear", 7);
             Gavianimator.SetBool("Bye", true);
+            stage0animator.SetBool("goal0", true);
             StartCoroutine(StageCrear0());
         }
 
@@ -574,7 +576,7 @@ public class GaviController : MonoBehaviour
     }
     IEnumerator StageCrear0()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(10);
         SceneManager.LoadScene("stage0Wold");
     }
 

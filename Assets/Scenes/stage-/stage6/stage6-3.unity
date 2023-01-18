@@ -1280,6 +1280,7 @@ MonoBehaviour:
   Help1: {fileID: 0}
   HelpPack2: {fileID: 0}
   Help2: {fileID: 0}
+  canobj: {fileID: 0}
   Camera: {fileID: 1818239106}
   subCamera: {fileID: 1022892614}
   worp1_1_X: 12
@@ -1299,6 +1300,7 @@ MonoBehaviour:
   Worp2: {fileID: 0}
   rb: {fileID: 239813929}
   Gavianimator: {fileID: 239813933}
+  stage0animator: {fileID: 0}
   Worpanimator: {fileID: 1337497437}
   Dieanimator: {fileID: 1034899116}
   Engine: 0
@@ -8541,7 +8543,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.8869305, y: 0}
+  m_Offset: {x: 3.1092072, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -8552,7 +8554,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.644722, y: 7.27}
+  m_Size: {x: 1.495575, y: 7.27}
   m_EdgeRadius: 0
 --- !u!212 &2095416752
 SpriteRenderer:

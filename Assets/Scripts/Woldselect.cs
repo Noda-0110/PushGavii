@@ -150,8 +150,8 @@ public class Woldselect : MonoBehaviour
             WorpLock[0].SetActive(false);
         }
 
-        Debug.Log(now);
-        Debug.Log("現在のクリアしたワールドは" + clearwold + "まで");
+        //Debug.Log(now);
+        //Debug.Log("現在のクリアしたワールドは" + clearwold + "まで");
     }
 
 

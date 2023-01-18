@@ -94,9 +94,9 @@ public class Stageselect : MonoBehaviour
             stagemove(6);
         }
 
-        Debug.Log("現在のワールドは" + nowWold);
-        Debug.Log("現在のステージは" + nowStage);
-        switch(nowWold){
+        //Debug.Log("現在のワールドは" + nowWold);
+        //Debug.Log("現在のステージは" + nowStage);
+        /*switch(nowWold){
             case 1:
                 Debug.Log("現在のクリアしたステージは" + clearstage1 + "まで");
                 break;
@@ -116,6 +116,7 @@ public class Stageselect : MonoBehaviour
                 Debug.Log("現在のクリアしたステージは" + clearstage6 + "まで");
                 break;
         }
+        */
     }
 
     public void clearflag(int Nowold,int clsta)
