@@ -229,7 +229,7 @@ public class GaviController : MonoBehaviour
             pos.y = worp3_2_Y;
             gameObject.transform.position = pos;
         }
-        Debug.Log(heart);
+        //Debug.Log(heart);
         if (helpmode1 == true)
         {
             if (Input.GetKeyDown(KeyCode.Return))

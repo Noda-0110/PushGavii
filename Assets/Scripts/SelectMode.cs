@@ -65,7 +65,7 @@ public class SelectMode : MonoBehaviour
             }
         }
 
-        Debug.Log(now);
+        //Debug.Log(now);
     }
 
 }

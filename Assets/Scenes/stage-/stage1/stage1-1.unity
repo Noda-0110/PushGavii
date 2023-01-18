@@ -849,7 +849,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &206842217
 Animator:
   serializedVersion: 4
@@ -3414,6 +3414,7 @@ MonoBehaviour:
   Help1: {fileID: 286006834}
   HelpPack2: {fileID: 1226364472}
   Help2: {fileID: 448872298}
+  canobj: {fileID: 0}
   Camera: {fileID: 2030160337}
   subCamera: {fileID: 1743748379}
   worp1_1_X: 0
@@ -3433,6 +3434,7 @@ MonoBehaviour:
   Worp2: {fileID: 0}
   rb: {fileID: 1096896874}
   Gavianimator: {fileID: 1096896883}
+  stage0animator: {fileID: 0}
   Worpanimator: {fileID: 206842217}
   Dieanimator: {fileID: 598485965}
   Engine: 0

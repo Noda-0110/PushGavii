@@ -1318,7 +1318,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 527904429}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.73, y: 0.46, z: 0}
+  m_LocalPosition: {x: 93.48, y: 0.53, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2787,6 +2787,7 @@ MonoBehaviour:
   Help1: {fileID: 0}
   HelpPack2: {fileID: 1226364472}
   Help2: {fileID: 0}
+  canobj: {fileID: 0}
   Camera: {fileID: 2030160337}
   subCamera: {fileID: 1743748379}
   worp1_1_X: 0
@@ -2806,7 +2807,9 @@ MonoBehaviour:
   Worp2: {fileID: 0}
   rb: {fileID: 1096896874}
   Gavianimator: {fileID: 1096896883}
+  stage0animator: {fileID: 0}
   Worpanimator: {fileID: 206842217}
+  Dieanimator: {fileID: 0}
   Engine: 0
   backbutton: {fileID: 1450386020}
   JampCount:
@@ -2826,6 +2829,7 @@ MonoBehaviour:
   - {fileID: 642286963}
   - {fileID: 1317665152}
   restart: 0
+  GDie: 0
 --- !u!95 &1096896883
 Animator:
   serializedVersion: 4
@@ -5532,11 +5536,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6645348091151825183, guid: e787c5433461faa45931d85da7ded1f9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.19
+      value: 88.45
       objectReference: {fileID: 0}
     - target: {fileID: 6645348091151825183, guid: e787c5433461faa45931d85da7ded1f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.36
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 6645348091151825183, guid: e787c5433461faa45931d85da7ded1f9, type: 3}
       propertyPath: m_LocalPosition.z
