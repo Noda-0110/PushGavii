@@ -187,10 +187,7 @@ public class GaviController : MonoBehaviour
     {
         //ステージ前にも戻る
         lastplay = PlayerPrefs.GetInt("StagePlay", 1);
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            SceneManager.LoadScene("stage" + lastplay);
-        }
+
             //ワープ時に使用
             Vector3 pos = gameObject.transform.position;
         if (wflg1_1)
@@ -273,7 +270,7 @@ public class GaviController : MonoBehaviour
         //エンジンを付けたら
         if (Engine == true)
         {
-            backbutton.SetActive(false);
+            //backbutton.SetActive(false);
             //地面との設置状況を受け取る
             isGroundAll = GroundCheck();
 
