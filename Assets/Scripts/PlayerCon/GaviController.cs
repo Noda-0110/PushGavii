@@ -464,6 +464,7 @@ public class GaviController : MonoBehaviour
 
         if (coll.gameObject.tag == "Gravity")
         {
+            a
             gflg = true;
             grflg = true;
         }
