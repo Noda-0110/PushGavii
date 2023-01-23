@@ -114,6 +114,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: rreverse_white
       objectReference: {fileID: 0}
+    - target: {fileID: 3418410285446447332, guid: 91be4a530997e6446b4a8fbdadbe3c2c, type: 3}
+      propertyPath: m_Size.x
+      value: 0.7728853
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418410285446447332, guid: 91be4a530997e6446b4a8fbdadbe3c2c, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.44355726
+      objectReference: {fileID: 0}
     - target: {fileID: 5385939154038797218, guid: 91be4a530997e6446b4a8fbdadbe3c2c, type: 3}
       propertyPath: m_RootOrder
       value: 0
