@@ -351,6 +351,17 @@ public class GaviController : MonoBehaviour
                     FollowCamera.cameraX = 5;
                     FollowCamera.cameraY = 0;
                 }
+                // gflgがtrueで、grflgで正面を向く
+                if (!gflg && grflg)
+                {
+                    //常に右へ進み続ける、影響受けない、段差止まる
+                    rb.velocity = new Vector2(grspeed, rb.velocity.y);
+                    Physics2D.gravity = new Vector2(0.0f, -9.81f);
+                    // ローカル座標基準で、現在の回転量へ加算する
+                    this.transform.rotation = Quaternion.Euler(0f, 180.0f, 0.0f);
+                    FollowCamera.cameraX = -5;
+                    FollowCamera.cameraY = 0;
+                }
 
                 //transform.Translate(transform.right * Time.deltaTime * 3 * speed);
                 //接地していればジャンプ可能
@@ -464,8 +475,30 @@ public class GaviController : MonoBehaviour
 
         if (coll.gameObject.tag == "Gravity")
         {
-            gflg = true;
-            grflg = true;
+            //向き　重力　反転せず
+            if (gflg == false && grflg == false)
+            {
+                gflg = true;
+                grflg = true;
+            }
+            //向きだけ反転
+            else if(gflg == false && grflg == true)
+            {
+                gflg = true;
+                grflg = false;
+            }
+            //重力だけ反転
+            else if(gflg == true && grflg == false)
+            {
+                gflg = false;
+                grflg = true;
+            }
+            //向き　重力　反転
+            else if(gflg == true && grflg == true)
+            {
+                gflg = false;
+                grflg = false;
+            }
         }
 
         if (coll.gameObject.tag == "rGravity")

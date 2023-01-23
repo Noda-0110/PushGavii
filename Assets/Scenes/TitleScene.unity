@@ -1944,6 +1944,10 @@ PrefabInstance:
       value: BGM
       objectReference: {fileID: 0}
     - target: {fileID: 537693621340166579, guid: 61a7735d389fae045b96733b4f7ee04b, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 537693621340166579, guid: 61a7735d389fae045b96733b4f7ee04b, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: d4adce1bf8a526c47a78031d0c26525d, type: 3}
