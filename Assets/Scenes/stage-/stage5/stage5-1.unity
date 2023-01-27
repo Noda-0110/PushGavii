@@ -3084,6 +3084,7 @@ MonoBehaviour:
   Help1: {fileID: 1841106743}
   HelpPack2: {fileID: 0}
   Help2: {fileID: 0}
+  canobj: {fileID: 0}
   Camera: {fileID: 1690843928}
   subCamera: {fileID: 620662802}
   worp1_1_X: 12
@@ -3103,6 +3104,7 @@ MonoBehaviour:
   Worp2: {fileID: 0}
   rb: {fileID: 1096896874}
   Gavianimator: {fileID: 1096896883}
+  stage0animator: {fileID: 0}
   Worpanimator: {fileID: 206842217}
   Dieanimator: {fileID: 0}
   Engine: 0
@@ -3375,8 +3377,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1299879175
+  m_SortingLayer: 1
   m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 46ae6c640c4d0cb4ebcd295238fdfa4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6842,8 +6844,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1299879175
+  m_SortingLayer: 1
   m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: b885ede1ce200da4f9d9351f5acbd288, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

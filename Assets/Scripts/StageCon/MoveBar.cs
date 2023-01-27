@@ -7,14 +7,15 @@ public class MoveBar : MonoBehaviour
     private Vector3 _initalPosision;
     private Quaternion _initalRotation;
 
+
     public float speed = 1;
     public bool Ymove = true;
     [SerializeField] private float _maxY = 1;
     [SerializeField] private float _minY = -1;
     [SerializeField] private float _maxX = 1;
     [SerializeField] private float _minX = -1;
-    public bool restart = false;
-    public bool Engine = false;
+    public bool restart;
+    public bool Engine;
 
     GameObject Player;
     GaviController Lifescript;
@@ -24,8 +25,8 @@ public class MoveBar : MonoBehaviour
         Player = GameObject.Find("Chara");
         Lifescript = Player.GetComponent<GaviController>();
         // ‰ŠúˆÊ’uE‰Šú‰ñ“]‚Ìæ“¾
-        _initalPosision = transform.position;
-        _initalRotation = transform.rotation;
+        _initalPosision = this.transform.position;
+        _initalRotation = this.transform.rotation;
     }
 
     // Update is called once per frame
@@ -56,6 +57,7 @@ public class MoveBar : MonoBehaviour
                     transform.Translate(transform.up * Time.deltaTime * 3 * -speed);
                     print("S");
                 }
+                if (restart == true) { StartReset(); }
             }
             else if (Ymove == false)
             {
@@ -78,15 +80,18 @@ public class MoveBar : MonoBehaviour
                     transform.Translate(transform.right * Time.deltaTime * 3 * -speed);
                     print("A");
                 }
+                if (restart == true) 
+                {
+                    StartReset(); 
+                }
             }
         }
-        if(restart == true) { StartReset(); }
 
     }
     public void StartReset()
     {
-        transform.position = _initalPosision; // ˆÊ’u‚Ì‰Šú‰»
-        transform.rotation = _initalRotation; // ‰ñ“]‚Ì‰Šú‰»
+        this.transform.position = _initalPosision; // ˆÊ’u‚Ì‰Šú‰»
+        this.transform.rotation = _initalRotation; // ‰ñ“]‚Ì‰Šú‰»
         restart = false;
     }
 

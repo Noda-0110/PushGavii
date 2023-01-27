@@ -7,9 +7,10 @@ public class RotastageMove : MonoBehaviour
     private Vector3 _initalPosision;
     private Quaternion _initalRotation;
     [Header("‰ñ“]‘¬“x")]
-    private float speed = 0.1f;
+    private float speed = 0.2f;
     public bool restart = false;
     public bool Engine = false;
+    private bool syoki = false;
 
     GameObject Player;
     GaviController Lifescript;
@@ -23,6 +24,9 @@ public class RotastageMove : MonoBehaviour
     }
     void Update()
     {
+        if(syoki == false)
+        { 
+        }
         Engine = Lifescript.Engine;
         if (Engine == true)
         {
