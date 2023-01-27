@@ -9,15 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScene.unity
     guid: a42553ae390694d4d81ee18908764da2
   - enabled: 1
-    path: Assets/Scenes/gavidirect.unity
-    guid: 9dcfb5ea006e7464fb3058e34aa111bb
-  - enabled: 1
-    path: Assets/Scenes/stage-/stage1/stage1-1 1.unity
-    guid: 4eb11c3b2105ac643b86b36d20510448
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 1
     path: Assets/Scenes/stage-/stage0.unity
     guid: 234b4d6a27e94e64d974db7b2ba7dd1b
   - enabled: 1
@@ -116,7 +107,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OverScene.unity
     guid: c3a602dac8e81e643bf2ade75f8cdf32
-  - enabled: 1
-    path: Assets/Scenes/stage-/tutorial.unity
-    guid: 767360e3bed73554e959d8e4f208f1de
   m_configObjects: {}
