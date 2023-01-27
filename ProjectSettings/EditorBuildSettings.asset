@@ -8,12 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TitleScene.unity
     guid: a42553ae390694d4d81ee18908764da2
-  - enabled: 1
-    path: Assets/Scenes/gavidirect.unity
-    guid: 9dcfb5ea006e7464fb3058e34aa111bb
-  - enabled: 1
-    path: Assets/Scenes/stage-/stage1/stage1-1 1.unity
-    guid: 4eb11c3b2105ac643b86b36d20510448
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
