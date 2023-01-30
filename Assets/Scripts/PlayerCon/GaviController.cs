@@ -384,12 +384,21 @@ public class GaviController : MonoBehaviour
     //ƒWƒƒƒ“ƒv‚·‚é
     private void Jump()
     {
+
         for (int i = 0; i <= JampMax; i++)
         {
             JampCount[i].SetActive(false);
         }
-        //Force‚ÍŒp‘±“I‚É—Í‚ð‰Á‚¦‚é@Impulse‚ÍuŠÔ“I‚É—Í‚ð‰Á‚¦‚é
-        rb.AddForce(Vector2.up * jump, ForceMode2D.Impulse);
+        if (grflg == false)
+        {
+            //Force‚ÍŒp‘±“I‚É—Í‚ð‰Á‚¦‚é@Impulse‚ÍuŠÔ“I‚É—Í‚ð‰Á‚¦‚é
+            rb.AddForce(Vector2.up * jump, ForceMode2D.Impulse);
+        }
+        else if(grflg == true)
+        {
+            //Force‚ÍŒp‘±“I‚É—Í‚ð‰Á‚¦‚é@Impulse‚ÍuŠÔ“I‚É—Í‚ð‰Á‚¦‚é
+            rb.AddForce(Vector2.up * -jump, ForceMode2D.Impulse);
+        }
     }
 
     //Ý’uó‹µ‚ð’²‚×‚Ä“n‚·
