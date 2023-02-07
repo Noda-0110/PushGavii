@@ -378,6 +378,7 @@ public class GaviController : MonoBehaviour
             }
         }
         //Žc‹@‚ð•\Ž¦
+
         LifeCount[heart].SetActive(true);
     }
 
