@@ -6546,6 +6546,7 @@ MonoBehaviour:
   Help1: {fileID: 0}
   HelpPack2: {fileID: 0}
   Help2: {fileID: 0}
+  canobj: {fileID: 0}
   Camera: {fileID: 675828234}
   subCamera: {fileID: 773159458}
   worp1_1_X: 0
@@ -6565,6 +6566,7 @@ MonoBehaviour:
   Worp2: {fileID: 0}
   rb: {fileID: 1096896874}
   Gavianimator: {fileID: 1096896883}
+  stage0animator: {fileID: 0}
   Worpanimator: {fileID: 206842217}
   Dieanimator: {fileID: 174424368}
   Engine: 0
@@ -6947,9 +6949,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 81cab7f63686a5f42b48abbfe3f5de3d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -8051,7 +8053,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.1
+  m_Value: 0.2
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

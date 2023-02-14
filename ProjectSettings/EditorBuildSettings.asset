@@ -28,6 +28,9 @@ EditorBuildSettings:
     guid: 90226ad281fcf864ea8f6848ef5a1068
   - enabled: 1
     path: Assets/Scenes/moviestage6.unity
+    guid: 431b22f3fba5d4441ab8292ccc0b130b
+  - enabled: 1
+    path: Assets/Scenes/moviestage7.unity
     guid: aef90bcf296cc4e48bacb5c1db2b8b3c
   - enabled: 1
     path: Assets/Scenes/stage-/stage1/stage1.unity
@@ -93,16 +96,28 @@ EditorBuildSettings:
     path: Assets/Scenes/stage-/stage5/stage5-3.unity
     guid: 02c4227e32b6b804faf94b02e4d6940d
   - enabled: 1
+    path: Assets/Scenes/stage-/stage6/stage6.unity
+    guid: 0bfb2e67e3b9b9549b373930a732f024
+  - enabled: 1
     path: Assets/Scenes/stage-/stage6/stage6-1.unity
-    guid: c04dd4b57891e224f8068b692c450820
+    guid: cfd2459e03bdabb45979fd24bb134b12
   - enabled: 1
     path: Assets/Scenes/stage-/stage6/stage6-2.unity
-    guid: b4c970ecc6eb6c74689ad5802fea10be
+    guid: 79581a8c19ca561458d860488a72db9d
   - enabled: 1
     path: Assets/Scenes/stage-/stage6/stage6-3.unity
+    guid: 63bbd3bec6c6536438f7f1358b049d97
+  - enabled: 1
+    path: Assets/Scenes/stage-/stage7/stage7-1.unity
+    guid: c04dd4b57891e224f8068b692c450820
+  - enabled: 1
+    path: Assets/Scenes/stage-/stage7/stage7-2.unity
+    guid: b4c970ecc6eb6c74689ad5802fea10be
+  - enabled: 1
+    path: Assets/Scenes/stage-/stage7/stage7-3.unity
     guid: d4a85dc1bfb5dca4eb70ebc41569c483
   - enabled: 1
-    path: Assets/Scenes/stage-/stage6/stage6.unity
+    path: Assets/Scenes/stage-/stage7/stage7.unity
     guid: dc27012f5473e3547968f7027f0eed44
   - enabled: 1
     path: Assets/Scenes/OverScene.unity

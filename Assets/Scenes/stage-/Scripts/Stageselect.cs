@@ -15,6 +15,7 @@ public class Stageselect : MonoBehaviour
     public int clearstage4;  //クリアしたステージ
     public int clearstage5;  //クリアしたステージ
     public int clearstage6;  //クリアしたステージ
+    public int clearstage7;  //クリアしたステージ
     public GameObject Player;   //プレイヤーの位置
     public GameObject[] Worp;   //ワープ先の位置
     [Header("ステージ１の旗")]
@@ -29,6 +30,8 @@ public class Stageselect : MonoBehaviour
     public GameObject[] WorpLock5;   //旗を入れる
     [Header("ステージ６の旗")]
     public GameObject[] WorpLock6;   //旗を入れる
+    [Header("ステージ7の旗")]
+    public GameObject[] WorpLock7;   //旗を入れる
     private int nowStage = 0;        //現在のステージ
     private int Stagelength;         //ステージの大きさの器
     [Header("現在のワールドの数字を入力")]
@@ -93,109 +96,92 @@ public class Stageselect : MonoBehaviour
             clearflag(6, clearstage6);
             stagemove(6);
         }
-
-        //Debug.Log("現在のワールドは" + nowWold);
-        //Debug.Log("現在のステージは" + nowStage);
-        /*switch(nowWold){
-            case 1:
-                Debug.Log("現在のクリアしたステージは" + clearstage1 + "まで");
-                break;
-            case 2:
-                Debug.Log("現在のクリアしたステージは" + clearstage2 + "まで");
-                break;
-            case 3:
-                Debug.Log("現在のクリアしたステージは" + clearstage3 + "まで");
-                break;
-            case 4:
-                Debug.Log("現在のクリアしたステージは" + clearstage4 + "まで");
-                break;
-            case 5:
-                Debug.Log("現在のクリアしたステージは" + clearstage5 + "まで");
-                break;
-            case 6:
-                Debug.Log("現在のクリアしたステージは" + clearstage6 + "まで");
-                break;
+        if (nowWold == 7)
+        {
+            clearstage7 = PlayerPrefs.GetInt("StageClear" + 7, 1);
+            clearflag(7, clearstage7);
+            stagemove(7);
         }
-        */
+
     }
 
-    public void clearflag(int Nowold,int clsta)
+    public void clearflag(int Nowold, int clsta)
     {
-        if(Nowold == 1)
+        if (Nowold == 1)
         {
-            if(clsta == 2)
+            if (clsta == 2)
             {
                 WorpLock1[0].SetActive(true);
             }
-            if(clsta == 3)
+            if (clsta == 3)
             {
                 WorpLock1[0].SetActive(true);
                 WorpLock1[1].SetActive(true);
             }
-            if(clsta >= 4)
+            if (clsta >= 4)
             {
                 WorpLock1[0].SetActive(true);
                 WorpLock1[1].SetActive(true);
                 WorpLock1[2].SetActive(true);
             }
         }
-        if(Nowold == 2)
+        if (Nowold == 2)
         {
-            if(clsta == 2)
+            if (clsta == 2)
             {
                 WorpLock2[0].SetActive(true);
             }
-            if(clsta == 3)
+            if (clsta == 3)
             {
                 WorpLock2[0].SetActive(true);
                 WorpLock2[1].SetActive(true);
             }
-            if(clsta >= 4)
+            if (clsta >= 4)
             {
                 WorpLock2[0].SetActive(true);
                 WorpLock2[1].SetActive(true);
                 WorpLock2[2].SetActive(true);
             }
         }
-        if(Nowold == 3)
+        if (Nowold == 3)
         {
-            if(clsta == 2)
+            if (clsta == 2)
             {
                 WorpLock3[0].SetActive(true);
             }
-            if(clsta == 3)
+            if (clsta == 3)
             {
                 WorpLock3[0].SetActive(true);
                 WorpLock3[1].SetActive(true);
             }
-            if(clsta >= 4)
+            if (clsta >= 4)
             {
                 WorpLock3[0].SetActive(true);
                 WorpLock3[1].SetActive(true);
                 WorpLock3[2].SetActive(true);
             }
         }
-        if(Nowold == 4)
+        if (Nowold == 4)
         {
-            if(clsta == 2)
+            if (clsta == 2)
             {
                 WorpLock4[0].SetActive(true);
             }
-            if(clsta == 3)
+            if (clsta == 3)
             {
                 WorpLock4[0].SetActive(true);
                 WorpLock4[1].SetActive(true);
             }
-            if(clsta >= 4)
+            if (clsta >= 4)
             {
                 WorpLock4[0].SetActive(true);
                 WorpLock4[1].SetActive(true);
                 WorpLock4[2].SetActive(true);
             }
         }
-        if(Nowold == 5)
+        if (Nowold == 5)
         {
-            if(clsta == 2)
+            if (clsta == 2)
             {
                 WorpLock5[0].SetActive(true);
             }
@@ -204,11 +190,48 @@ public class Stageselect : MonoBehaviour
                 WorpLock5[0].SetActive(true);
                 WorpLock5[1].SetActive(true);
             }
-            if(clsta >= 4)
+            if (clsta >= 4)
             {
                 WorpLock5[0].SetActive(true);
                 WorpLock5[1].SetActive(true);
                 WorpLock5[2].SetActive(true);
+            }
+        }
+        if (Nowold == 6)
+        {
+            if (clsta == 2)
+            {
+                WorpLock6[0].SetActive(true);
+            }
+            if (clsta == 3)
+            {
+                WorpLock6[0].SetActive(true);
+                WorpLock6[1].SetActive(true);
+            }
+            if (clsta >= 4)
+            {
+                WorpLock6[0].SetActive(true);
+                WorpLock6[1].SetActive(true);
+                WorpLock6[2].SetActive(true);
+            }
+        }
+        if (Nowold == 7)
+        {
+            if (clsta == 2)
+            {
+                WorpLock7[0].SetActive(true);
+            }
+            if (clsta == 3)
+            {
+                WorpLock7[0].SetActive(true);
+                WorpLock7[1].SetActive(true);
+            }
+            if (clsta >= 4)
+            {
+                WorpLock7[0].SetActive(true);
+                WorpLock7[1].SetActive(true);
+                WorpLock7[2].SetActive(true);
+
             }
         }
     }
@@ -266,6 +289,15 @@ public class Stageselect : MonoBehaviour
             {
                 //ステージの数より先には進まない
                 if (Stagelength > nowStage && nowStage < clearstage6)
+                {
+                    nowStage++;
+                    Player.transform.position = Worp[nowStage].transform.position;
+                }
+            }
+            if (Nowold == 7)
+            {
+                //ステージの数より先には進まない
+                if (Stagelength > nowStage && nowStage < clearstage7)
                 {
                     nowStage++;
                     Player.transform.position = Worp[nowStage].transform.position;

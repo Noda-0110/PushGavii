@@ -126,19 +126,16 @@ public class Woldselect : MonoBehaviour
             WorpLock[4].SetActive(false);
             WorpLock[0].SetActive(false);
         }
-        //ステージ６は解放しない
         if(clearwold >= 6)
         {
             WorpLock[1].SetActive(false);
             WorpLock[2].SetActive(false);
             WorpLock[3].SetActive(false);
             WorpLock[4].SetActive(false);
-            WorpLock[6].SetActive(false);
+            WorpLock[5].SetActive(false);
             WorpLock[0].SetActive(false);
-            endstage = true;
 
         }
-        //ステージ０クリア後にステージ６解放
         if(clearwold >= 7)
         {
             WorpLock[1].SetActive(false);
@@ -146,14 +143,29 @@ public class Woldselect : MonoBehaviour
             WorpLock[3].SetActive(false);
             WorpLock[4].SetActive(false);
             WorpLock[5].SetActive(false);
+            WorpLock[7].SetActive(false);
+            WorpLock[0].SetActive(false);
+            endstage = true;
+        }
+        //ステージ０クリア後にステージ7解放
+        if(clearwold >= 8)
+        {
+            WorpLock[1].SetActive(false);
+            WorpLock[2].SetActive(false);
+            WorpLock[3].SetActive(false);
+            WorpLock[4].SetActive(false);
+            WorpLock[5].SetActive(false);
             WorpLock[6].SetActive(false);
+            WorpLock[7].SetActive(false);
             WorpLock[0].SetActive(false);
         }
 
-        //Debug.Log(now);
-        //Debug.Log("現在のクリアしたワールドは" + clearwold + "まで");
     }
 
+    public void Titlemove()
+    {
+        SceneManager.LoadScene("TitleScene");
+    }
 
 
     public void DataReset()
@@ -167,24 +179,28 @@ public class Woldselect : MonoBehaviour
         PlayerPrefs.DeleteKey("StageClear4");
         PlayerPrefs.DeleteKey("StageClear5");
         PlayerPrefs.DeleteKey("StageClear6");
+        PlayerPrefs.DeleteKey("StageClear7");
         PlayerPrefs.DeleteKey("movie1");
         PlayerPrefs.DeleteKey("movie2");
         PlayerPrefs.DeleteKey("movie3");
         PlayerPrefs.DeleteKey("movie4");
         PlayerPrefs.DeleteKey("movie5");
         PlayerPrefs.DeleteKey("movie6");
+        PlayerPrefs.DeleteKey("movie7");
+        endstage = false;
     }
     public void DataCLEAR()
     {
         //クリアしたことにする
         PlayerPrefs.DeleteKey("StagePlay");
-        PlayerPrefs.SetInt("WoldClear", 7);
-        PlayerPrefs.SetInt("StageClear1", 7);
-        PlayerPrefs.SetInt("StageClear2", 7);
-        PlayerPrefs.SetInt("StageClear3", 7);
-        PlayerPrefs.SetInt("StageClear4", 7);
-        PlayerPrefs.SetInt("StageClear5", 7);
-        PlayerPrefs.SetInt("StageClear6", 7);
+        PlayerPrefs.SetInt("WoldClear", 8);
+        PlayerPrefs.SetInt("StageClear1", 8);
+        PlayerPrefs.SetInt("StageClear2", 8);
+        PlayerPrefs.SetInt("StageClear3", 8);
+        PlayerPrefs.SetInt("StageClear4", 8);
+        PlayerPrefs.SetInt("StageClear5", 8);
+        PlayerPrefs.SetInt("StageClear6", 8);
+        endstage = true;
     }
 
 }
