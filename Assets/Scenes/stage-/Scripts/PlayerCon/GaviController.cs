@@ -600,17 +600,6 @@ public class GaviController : MonoBehaviour
             Time.timeScale = 0;
             helpmode2 = true;
         }
-        /*
-        if (coll.gameObject.tag == "Reverse")
-        {
-            rflg = false;
-        }
-
-        if (coll.gameObject.tag == "RReverse")
-        {
-            rflg = true;
-        }
-        */
     }
     IEnumerator StageCrear()
     {
