@@ -226,7 +226,6 @@ public class GaviController : MonoBehaviour
             pos.y = worp3_2_Y;
             gameObject.transform.position = pos;
         }
-        //Debug.Log(heart);
         if (helpmode1 == true)
         {
             if (Input.GetKeyDown(KeyCode.Return))
@@ -302,6 +301,7 @@ public class GaviController : MonoBehaviour
             //通常操作
             else
             {
+                /*
                 if (rflg)
                 {
                     //常に右へ進み続ける、影響受けない、段差止まる
@@ -309,6 +309,7 @@ public class GaviController : MonoBehaviour
                     this.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
                     FollowCamera.cameraX = 5;
                 }
+                
                 if(!rflg)
                 {
                     //常に左へ進み続ける、影響受けない、段差止まる
@@ -317,27 +318,31 @@ public class GaviController : MonoBehaviour
                     this.transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
                     FollowCamera.cameraX = -5;
                 }
-
+                */
+                
                 // 元に戻す
-                if (!grflg)
+                if (!gflg && !grflg)
                 {
                     //常に右へ進み続ける、影響受けない、段差止まる
                     rb.velocity = new Vector2(speed, rb.velocity.y);
                     this.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
                     Physics2D.gravity = new Vector2(0.0f, -9.81f);
+                    FollowCamera.cameraX = 5;
+                    FollowCamera.cameraY = 2;
                     rflg = true;
                 }
+                
 
-                // gflgがtrueで、grflgで反対を向く
+                // gflgは重力　grflgはtrueで
                 if (gflg && grflg)
                 {
                     //常に右へ進み続ける、影響受けない、段差止まる
-                    rb.velocity = new Vector2(grspeed, rb.velocity.y);
+                    rb.velocity = new Vector2(-speed, rb.velocity.y);
                     Physics2D.gravity = new Vector2(0.0f, 9.81f);
                     // ローカル座標基準で、現在の回転量へ加算する
                     this.transform.rotation = Quaternion.Euler(180.0f, 180.0f, 0.0f);
                     FollowCamera.cameraX = -5;
-                    FollowCamera.cameraY = 0;
+                    FollowCamera.cameraY = 2;
                 }
 
                 // gflgがtrueで、grflgで正面を向く
@@ -349,18 +354,18 @@ public class GaviController : MonoBehaviour
                     // ローカル座標基準で、現在の回転量へ加算する
                     this.transform.rotation = Quaternion.Euler(180.0f, 0.0f, 0.0f);
                     FollowCamera.cameraX = 5;
-                    FollowCamera.cameraY = 0;
+                    FollowCamera.cameraY = 2;
                 }
                 // gflgがtrueで、grflgで正面を向く
                 if (!gflg && grflg)
                 {
                     //常に右へ進み続ける、影響受けない、段差止まる
-                    rb.velocity = new Vector2(grspeed, rb.velocity.y);
+                    rb.velocity = new Vector2(-speed, rb.velocity.y);
                     Physics2D.gravity = new Vector2(0.0f, -9.81f);
                     // ローカル座標基準で、現在の回転量へ加算する
                     this.transform.rotation = Quaternion.Euler(0f, 180.0f, 0.0f);
                     FollowCamera.cameraX = -5;
-                    FollowCamera.cameraY = 0;
+                    FollowCamera.cameraY = 2;
                 }
 
                 //transform.Translate(transform.right * Time.deltaTime * 3 * speed);
@@ -390,15 +395,19 @@ public class GaviController : MonoBehaviour
         {
             JampCount[i].SetActive(false);
         }
-        if (grflg == false)
+        //向き反転
+        if (gflg == false)
         {
             //Forceは継続的に力を加える　Impulseは瞬間的に力を加える
             rb.AddForce(Vector2.up * jump, ForceMode2D.Impulse);
+            Debug.Log("ジャンプしました");
         }
-        else if(grflg == true)
+        //向き正常
+        else if(gflg == true)
         {
             //Forceは継続的に力を加える　Impulseは瞬間的に力を加える
             rb.AddForce(Vector2.up * -jump, ForceMode2D.Impulse);
+            Debug.Log("ジャンプしました");
         }
     }
 
@@ -473,19 +482,23 @@ public class GaviController : MonoBehaviour
         }
         if (coll.gameObject.tag == "Reverse")
         {
-            rflg = false;
+            //進行方向をひだりへ
+            //rflg = false;
+            //向きも左
             grflg = true;
         }
 
         if (coll.gameObject.tag == "RReverse")
         {
-            rflg = true;
+            //進行方向をみぎへ
+            //rflg = true;
+            //向きも右
             grflg = false;
         }
 
         if (coll.gameObject.tag == "Gravity")
         {
-            //向き　重力　反転せず
+            //重力　向き　反転せず
             if (gflg == false && grflg == false)
             {
                 gflg = true;
@@ -573,7 +586,7 @@ public class GaviController : MonoBehaviour
             rspeed = 0;
             canobj.SetActive(false);
             //クリアワールドの更新、選択画面へ
-            PlayerPrefs.SetInt("WoldClear", 7);
+            PlayerPrefs.SetInt("WoldClear", 9);
             Gavianimator.SetBool("Bye", true);
             stage0animator.SetBool("goal0", true);
             StartCoroutine(StageCrear0());
@@ -600,6 +613,7 @@ public class GaviController : MonoBehaviour
             Time.timeScale = 0;
             helpmode2 = true;
         }
+
     }
     IEnumerator StageCrear()
     {
